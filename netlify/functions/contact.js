@@ -15,7 +15,7 @@ exports.handler = async (event, context) => {
         pass: ''
 =======
         user: 'mahboobalam7131@gmail.com',
-        pass: 'qybp xcin fdzf bimn'
+        pass: 'qtnm hggd jthl gked'
 >>>>>>> 920a0495828677a524301729d73c90b87dbdac86
       }
     });
