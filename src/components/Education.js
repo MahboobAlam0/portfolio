@@ -33,7 +33,7 @@ const Education = () => {
             result="73.8%"
           />
           <ResumeCard
-            title="Senior Secondary School Education"
+            title="High School Education"
             subTitle="Carmel Public School, Gajraula • 2017-2018"
             result="7.8/10.0"
           />
