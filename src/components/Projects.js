@@ -28,6 +28,15 @@ const Projects = () => {
             demo: 'https://demo-link.com',
         },
         {
+            title: 'Telecom Customer Churn Predictive Anlysis',
+            description: 'Implemented RandomForestClassifier to predict customer's churn based on churning behavior for targeted marketing.',
+            image: segmentationImage,
+            category: 'data-analysis',
+            techStack: ['Python', 'Scikit-learn', 'Matplotlib', 'Random Forest Classifier'],
+            github: 'https://github.com/MahboobAlam0/customerchurn',
+            demo: 'https://customerchurn-0.streamlit.app/',
+        },
+        {
             title: 'Sentiment Analysis Dashboard',
             description: 'Created a real-time sentiment analysis dashboard for social media data using NLP techniques.',
             image: sentimentImage,
