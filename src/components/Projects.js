@@ -29,7 +29,7 @@ const Projects = () => {
         },
         {
             title: 'Telecom Customer Churn Predictive Anlysis',
-            description: 'Implemented RandomForestClassifier to predict customer's churn based on churning behavior for targeted marketing.',
+            description: "Implemented RandomForestClassifier to predict customer's churn based on churning behavior for targeted marketing.",
             image: segmentationImage,
             category: 'data-analysis',
             techStack: ['Python', 'Scikit-learn', 'Matplotlib', 'Random Forest Classifier'],
