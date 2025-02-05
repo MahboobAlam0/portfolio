@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import stockImage from '../assets/images/ProjectImages/StockPredictor.png';
 import segmentationImage from '../assets/images/ProjectImages/CustomerSegmentation.jpg';
-import sentimentImage from '../assets/images/ProjectImages/SentimentAnlysis.jpg'
+import sentimentImage from '../assets/images/ProjectImages/SentimentAnlysis.jpg';
+import churnImage from '../assets/images/ProjectImages/Churn.png';
 import { useTheme } from '../context/ThemeContext';
 import '../styles/Projects.css';
 
@@ -30,9 +31,9 @@ const Projects = () => {
         {
             title: 'Telecom Customer Churn Predictive Anlysis',
             description: "Implemented RandomForestClassifier to predict customer's churn based on churning behavior for targeted marketing.",
-            image: segmentationImage,
+            image: churnImage,
             category: 'data-analysis',
-            techStack: ['Python', 'Scikit-learn', 'Matplotlib', 'Random Forest Classifier'],
+            techStack: ['Python', 'Scikit-learn', 'Matplotlib', 'Random Forest Classifier', 'Streamlit'],
             github: 'https://github.com/MahboobAlam0/customerchurn',
             demo: 'https://customerchurn-0.streamlit.app/',
         },
