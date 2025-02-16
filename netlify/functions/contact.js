@@ -10,23 +10,14 @@ exports.handler = async (event, context) => {
       secure: true,
       port: 465,
       auth: {
-<<<<<<< HEAD
-        user: '',
-        pass: ''
-=======
         user: 'mahboobalam7131@gmail.com',
         pass: 'qtnm hggd jthl gked'
->>>>>>> 920a0495828677a524301729d73c90b87dbdac86
       }
     });
 
     const mailOptions = {
       from: email,
-<<<<<<< HEAD
-      to: '',
-=======
       to: 'mahboobalam7131@gmail.com',
->>>>>>> 920a0495828677a524301729d73c90b87dbdac86
       subject: `New message from ${name} ${email}`,
       text: `${message}`
     };
