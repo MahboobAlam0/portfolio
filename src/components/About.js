@@ -31,7 +31,7 @@ const About = () => {
         <div className="about-profile">
           <h2 className="welcome-text">Welcome to My Portfolio</h2>
           <div className="profile-image">
-            <img src={profileImage} alt="John Doe" />
+            <img src={profileImage} alt="Mahboob Alam" />
           </div>
           <div className="profile-title">
             <h1 className="name-container">
