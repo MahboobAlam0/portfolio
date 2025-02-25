@@ -12,15 +12,6 @@ const Projects = () => {
 
     const projectList = [
         {
-            title: 'Machine Learning Stock Predictor',
-            description: 'Built an LSTM-based deep learning model to predict stock market trends with 85% accuracy using Python and TensorFlow.',
-            image: stockImage,
-            category: 'machine-learning',
-            techStack: ['Python', 'TensorFlow', 'Pandas', 'Scikit-learn'],
-            github: 'https://github.com/username/stock-predictor',
-            demo: 'https://demo-link.com',
-        },
-        {
             title: 'Medical Insurance Cost Analysis Predictor',
             description: 'Implementing Linear Regression algorithm to predict medical insurane cost with 78.30 % accuracy using Python.',
             image: medicalInsuranceImage,
@@ -30,15 +21,6 @@ const Projects = () => {
             demo: 'https://medicalinsurancecostanalysis0.streamlit.app',
         },
         {
-            title: 'Customer Segmentation Analysis',
-            description: 'Implemented K-means clustering to segment customers based on purchasing behavior for targeted marketing.',
-            image: segmentationImage,
-            category: 'data-analysis',
-            techStack: ['Python', 'Scikit-learn', 'Matplotlib', 'Seaborn'],
-            github: 'https://github.com/username/customer-segmentation',
-            demo: 'https://demo-link.com',
-        },
-        {
             title: 'Telecom Customer Churn Predictive Anlysis',
             description: "Implemented RandomForestClassifier to predict customer's churn based on churning behavior for targeted marketing.",
             image: churnImage,
@@ -46,6 +28,24 @@ const Projects = () => {
             techStack: ['Python', 'Scikit-learn', 'Matplotlib', 'Random Forest Classifier', 'Streamlit'],
             github: 'https://github.com/MahboobAlam0/customerchurn',
             demo: 'https://customerchurn-0.streamlit.app/',
+        },
+        {
+            title: 'Machine Learning Stock Predictor',
+            description: 'Built an LSTM-based deep learning model to predict stock market trends with 85% accuracy using Python and TensorFlow.',
+            image: stockImage,
+            category: 'machine-learning',
+            techStack: ['Python', 'TensorFlow', 'Pandas', 'Scikit-learn'],
+            github: 'https://github.com/username/stock-predictor',
+            demo: 'https://demo-link.com',
+        },
+        {
+            title: 'Customer Segmentation Analysis',
+            description: 'Implemented K-means clustering to segment customers based on purchasing behavior for targeted marketing.',
+            image: segmentationImage,
+            category: 'data-analysis',
+            techStack: ['Python', 'Scikit-learn', 'Matplotlib', 'Seaborn'],
+            github: 'https://github.com/username/customer-segmentation',
+            demo: 'https://demo-link.com',
         },
         {
             title: 'Sentiment Analysis Dashboard',
