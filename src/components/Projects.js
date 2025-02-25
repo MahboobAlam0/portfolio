@@ -3,7 +3,7 @@ import stockImage from '../assets/images/ProjectImages/StockPredictor.png';
 import segmentationImage from '../assets/images/ProjectImages/CustomerSegmentation.jpg';
 import sentimentImage from '../assets/images/ProjectImages/SentimentAnlysis.jpg';
 import churnImage from '../assets/images/ProjectImages/Churn.png';
-import medicalInsuranceImage from '../assets/images/ProjectImages/MedicalImage.jpg';
+import medicalInsuranceImage from '../assets/images/ProjectImages/MedicalImage.jpeg';
 import { useTheme } from '../context/ThemeContext';
 import '../styles/Projects.css';
 
