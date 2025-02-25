@@ -3,7 +3,7 @@ import stockImage from '../assets/images/ProjectImages/StockPredictor.png';
 import segmentationImage from '../assets/images/ProjectImages/CustomerSegmentation.jpg';
 import sentimentImage from '../assets/images/ProjectImages/SentimentAnlysis.jpg';
 import churnImage from '../assets/images/ProjectImages/Churn.png';
-import MedicalInsuranceImage from '../assets/images/ProjectImages/MedicalImage.jpg';
+import medicalInsuranceImage from '../assets/images/ProjectImages/MedicalImage.jpg';
 import { useTheme } from '../context/ThemeContext';
 import '../styles/Projects.css';
 
@@ -22,8 +22,8 @@ const Projects = () => {
         },
         {
             title: 'Medical Insurance Cost Analysis Predictor',
-            description: 'Built an LSTM-based deep learning model to predict stock market trends with 85% accuracy using Python and TensorFlow.',
-            image: MedicalInsuranceImage,
+            description: 'Implementing Linear Regression algorithm to predict medical insurane cost with 78.30 % accuracy using Python.',
+            image: medicalInsuranceImage,
             category: 'machine-learning',
             techStack: ['Python', 'Linear Regression', 'Pandas','Numpy', 'Scikit-learn'],
             github: 'https://github.com/MahboobAlam0/medicalinsurancecostanalysis',
