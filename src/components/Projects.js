@@ -20,6 +20,15 @@ const Projects = () => {
             demo: 'https://demo-link.com',
         },
         {
+            title: 'Medical Insurance Cost Analysis Predictor',
+            description: 'Built an LSTM-based deep learning model to predict stock market trends with 85% accuracy using Python and TensorFlow.',
+            image: MedicalInsuranceImage,
+            category: 'machine-learning',
+            techStack: ['Python', 'Linear Regression', 'Pandas','Numpy', 'Scikit-learn'],
+            github: 'https://github.com/MahboobAlam0/medicalinsurancecostanalysis',
+            demo: 'https://medicalinsurancecostanalysis0.streamlit.app',
+        },
+        {
             title: 'Customer Segmentation Analysis',
             description: 'Implemented K-means clustering to segment customers based on purchasing behavior for targeted marketing.',
             image: segmentationImage,
