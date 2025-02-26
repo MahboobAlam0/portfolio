@@ -21,7 +21,7 @@ const Projects = () => {
             demo: 'https://medicalinsurancecostanalysis0.streamlit.app',
         },
         {
-            title: 'Telecom Customer Churn Predictive Anlysis',
+            title: 'Telecom Customer Churn Predictive Analysis',
             description: "Implemented RandomForestClassifier to predict customer's churn based on churning behavior for targeted marketing.",
             image: churnImage,
             category: 'data-analysis',
