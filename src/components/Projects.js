@@ -28,7 +28,8 @@ const Projects = () => {
             techStack: ['Python', 'Scikit-learn', 'Matplotlib', 'Random Forest Classifier', 'Streamlit'],
             github: 'https://github.com/MahboobAlam0/customerchurn',
             demo: 'https://customerchurn-0.streamlit.app/',
-        },
+        }
+        // },
         // {
         //     title: 'Machine Learning Stock Predictor',
         //     description: 'Built an LSTM-based deep learning model to predict stock market trends with 85% accuracy using Python and TensorFlow.',
