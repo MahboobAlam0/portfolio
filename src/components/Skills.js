@@ -1,5 +1,5 @@
 import React from "react";
-import resumePDF from "../assets/resume/Mahboob_Resume.pdf";
+import resumePDF from "../assets/Mahboob_Resume.pdf";
 import { useTheme } from "../context/ThemeContext";
 import "../styles/Skills.css";
 
