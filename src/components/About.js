@@ -45,18 +45,16 @@ const About = () => {
         <div className="about-content">
           <div className="about-text">
             <p>
-              I'm pursuing M.Tech (Data Science) from DIAT - DRDO, Pune. A
-              passionate Data Science enthusiast with a drive for turning
-              complex data into actionable insights. I specialize in machine
-              learning, statistical analysis, and data visualization, constantly
-              exploring new technologies and methodologies in the field of AI
-              and Data Science.
+               I've always loved solving problems. During my B.Tech, I learned how to code well, but I soon realized the most interesting challenges were hidden in data, not just in the code itself. I understood that the future was about using data to ask smarter questions.
             </p>
             <p>
-              With a strong foundation in Python programming and machine
-              learning algorithms, I focus on developing innovative solutions
-              that make a real impact. My expertise includes deep learning,
-              natural language processing, and predictive modeling.
+              This realization changed my plan. Instead of taking a job right away, I decided to spend a full year preparing for the GATE exam. It was a big commitment, but my goal was clear: to get into a top data science program.
+            </p>
+            <p>
+              My M.Tech at DIAT (DRDO) has been a fantastic opportunity to learn the most current ideas in AI. Here, I'm not just learning theory; I'm applying it to real-world problems. I focus on practical challenges, like making new Generative AI tools give reliable results. This has also led me to study Explainable AI (XAI), because I believe an AI's answer is only useful if we can understand how it reached its conclusion.
+            </p>
+            <p>
+                My main goal is to use my skills in Python and PyTorch to turn complicated data into simple, useful information. I am looking for a team that is serious about solving tough problems in NLP or predictive analytics, and I would do well in a place that is always searching for better answers.
             </p>
             <h4 className="warning">
               <span className="star">*</span>
