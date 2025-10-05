@@ -15,32 +15,26 @@ const Skills = () => {
       ],
     },
     {
-      category: "Machine Learning",
+      category: "Machine Learning Libraries",
       items: [
-        { name: "TensorFlow", icon: "fas fa-microchip" },
         { name: "Scikit-learn", icon: "fas fa-brain" },
         { name: "PyTorch", icon: "fas fa-fire" },
-        { name: "Keras", icon: "fas fa-code" },
-      ],
-    },
-    {
-      category: "Data Analysis",
-      items: [
         { name: "Pandas", icon: "fas fa-table" },
         { name: "NumPy", icon: "fas fa-calculator" },
-        { name: "Jupyter", icon: "fas fa-book-open" },
-        { name: "Excel", icon: "fas fa-file-excel" },
-      ],
-    },
-    {
-      category: "Visualization",
-      items: [
-        { name: "Tableau", icon: "fas fa-chart-bar" },
-        { name: "PowerBI", icon: "fas fa-chart-pie" },
         { name: "Matplotlib", icon: "fas fa-chart-line" },
         { name: "Seaborn", icon: "fas fa-chart-area" },
       ],
     },
+    {
+      category: "Tools ",
+      items: [
+        { name: "Jupyter", icon: "fas fa-book-open" },
+        { name: "Excel", icon: "fas fa-file-excel" },
+        { name: "VS Code", icon: "fas fa-code" },
+        { name: "Google Colab", icon: "fas fa-infinity" },
+        { name: "GitHub", icon: "fab fa-github" }
+      ],
+    }
   ];
 
   const { isDarkMode } = useTheme();
