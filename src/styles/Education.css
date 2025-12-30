@@ -1,14 +1,8 @@
 .education {
     padding: 80px 0;
-
 }
 
-.education-timeline {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.education-timeline h2 {
+.education h2 {
     text-align: center;
     margin-bottom: 3rem;
     font-size: 2.5rem;
@@ -18,81 +12,107 @@
     -webkit-text-fill-color: transparent;
 }
 
-.timeline-container {
-    position: relative;
-    padding-left: 20px;
-    border-left: 3px solid var(--accent-glow);
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-/* ResumeCard styles are handled by the component's internal styles or we can duplicate the CSS if they are not shared in a global file. 
-   Since ResumeCard.css is imported by ResumeCard.js, we should actually move the specific timeline-connector styling to ResumeCard.css or keep it here if it's external.
-   
-   However, ResumeCard.js imports specific CSS. Let's make sure Education and Experience match.
-*/
-
-/* We rely on the styles defined in Experience.css for the resume-card class if they are global, 
-   BUT since we are importing separate CSS files, we need to ensure consistency. 
-   Ideally, we should have a `Timeline.css` shared by both. 
-   For now, I will replicate the styles to ensure exact match.
-*/
-
-.resume-card {
-    padding: 2rem;
+.education-card {
+    padding: 2.5rem;
     border-radius: 20px;
-    /* Match Projects */
-    margin-bottom: 2rem;
-    position: relative;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--glass-border);
+    /* Ensure glass border */
+    background: var(--card-bg);
 }
 
-.resume-card:hover {
-    transform: translateX(10px);
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
 }
 
-.resume-card::before {
-    content: '';
-    position: absolute;
-    left: -32px;
-    top: 30px;
-    width: 20px;
-    height: 20px;
-    background: var(--accent-color);
-    border-radius: 50%;
-    border: 4px solid var(--secondary-bg);
-    /* Match section bg */
-    box-shadow: 0 0 10px var(--accent-glow);
+.edu-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    padding: 1rem;
+    background: var(--accent-glow);
+    border-radius: 12px;
+    min-width: 80px;
+    /* Prevent shrinking */
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edu-content {
+    flex: 1;
+}
+
+.edu-content h3 {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.edu-content .institution {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.edu-content .year {
+    color: var(--accent-color);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.edu-tags {
+    margin-bottom: 1rem;
+}
+
+.tag-result {
+    padding: 0.3rem 0.8rem;
+    background: var(--accent-glow);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    display: inline-block;
+}
+
+.edu-content .description {
+    color: var(--text-secondary);
+    line-height: 1.6;
 }
 
 @media (max-width: 768px) {
-    .education {
-        padding: 50px 0;
-    }
-
-    .timeline-container {
-        padding-left: 0;
-        margin-left: 0;
-        border-left: none;
-        /* Remove timeline line */
-    }
-
-    .resume-card {
+    .education-card {
+        flex-direction: column;
         padding: 1.5rem;
-        margin-left: 0;
-        text-align: left;
-        /* Restore left alignment for professionalism */
-        margin-bottom: 1.5rem;
+        gap: 1.5rem;
+        text-align: center;
+        /* Center on mobile like planned */
     }
 
-    .resume-card h3 {
-        font-size: 1.2rem;
-        /* Reduce header size slightly */
+    .edu-icon {
+        margin: 0 auto;
+        /* Center icon */
     }
 
-    .resume-card .subtitle {
-        font-size: 0.95rem;
-    }
-
-    .resume-card::before {
-        display: none;
+    .education h2 {
+        font-size: 2rem;
     }
 }
