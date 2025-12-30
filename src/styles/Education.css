@@ -77,12 +77,21 @@
     .resume-card {
         padding: 1.5rem;
         margin-left: 0;
-        text-align: center;
-        /* Optional: Center text for better mobile balance */
+        text-align: left;
+        /* Restore left alignment for professionalism */
+        margin-bottom: 1.5rem;
+    }
+
+    .resume-card h3 {
+        font-size: 1.2rem;
+        /* Reduce header size slightly */
+    }
+
+    .resume-card .subtitle {
+        font-size: 0.95rem;
     }
 
     .resume-card::before {
         display: none;
-        /* Remove timeline dot */
     }
 }
