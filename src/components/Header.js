@@ -20,6 +20,7 @@ const Header = () => {
                     </button>
                     <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                         <li><a href="#about">Home</a></li>
+                        <li><a href="https://insightlog.netlify.app/">Blogs</a></li>
                         <li><a href="#skills">Skills</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>

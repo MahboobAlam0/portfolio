@@ -19,7 +19,7 @@ const Education = () => {
           <ResumeCard
             title="M.Tech in Data Science"
             subTitle="Defence Institute of Advanced Technology - DRDO, Pune • 2024-2026"
-            result="7.31/10.0"
+            result="7.65/10.0"
             des="Specialized in Machine Learning and Data Analytics"
           />
           <ResumeCard
