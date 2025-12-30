@@ -2,44 +2,40 @@ import React from "react";
 import { useTheme } from "../context/ThemeContext";
 import { motion } from "framer-motion";
 import ResumeCard from "./ResumeCard";
+import useScrollReveal, { containerVariants, itemVariants } from "../hooks/useScrollReveal";
 import "../styles/Education.css";
 
 const Education = () => {
-
   const { isDarkMode } = useTheme();
+  const { ref, controls } = useScrollReveal();
+
   return (
-    <section className={`education ${isDarkMode ? "dark-mode" : ""}`} id="education">
+    <section className={`education ${isDarkMode ? "dark-mode" : ""}`} id="education" ref={ref}>
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial="hidden"
+        animate={controls}
+        variants={containerVariants}
         className="education-timeline"
       >
-        <h2>Education</h2>
+        <motion.h2 variants={itemVariants}>Education</motion.h2>
         <div className="timeline-container">
-          <ResumeCard
-            title="M.Tech in Data Science"
-            subTitle="Defence Institute of Advanced Technology - DRDO, Pune • 2024-2026"
-            result="7.65/10.0"
-            des="Specialized in Machine Learning and Data Analytics"
-          />
-          <ResumeCard
-            title="B.Tech in Computer Science and Engineering"
-            subTitle="Rao Birender Singh State Institute of Engineering and Technology, Rewari • 2019-2023"
-            result="6.1/10.0"
-          />
-          <ResumeCard
-            title="Senior Secondary School Education"
-            subTitle="Bal Bharti Inter College, Gajraula • 2017-2018"
-            result="73.8%"
-          />
-          <ResumeCard
-            title="High School Education"
-            subTitle="Carmel Public School, Gajraula • 2017-2018"
-            result="7.8/10.0"
-          />
+          <motion.div variants={itemVariants}>
+            <ResumeCard
+                title="M.Tech in Data Science"
+                subTitle="Defence Institute of Advanced Technology (DIAT–DRDO), Pune • 2024–2026"
+                result="CGPA: 7.65"
+                des="Focus on Machine Learning, Deep Learning, and Advanced Data Analytics."
+            />
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <ResumeCard
+                title="B.Tech in Computer Science and Engineering"
+                subTitle="RBSSIET, Rewari • 2019–2023"
+                result=""
+            />
+          </motion.div>
         </div>
       </motion.div>
-      <div className="section-divider"></div>
     </section>
   );
 };

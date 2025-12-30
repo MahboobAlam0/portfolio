@@ -1,73 +1,92 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useTheme } from "../context/ThemeContext";
 import profileImage from "../assets/images/ProfileImage/Profile.png";
+import { motion } from "framer-motion";
+import resumePDF from "../assets/Mahboob_Resume.pdf";
 import "../styles/About.css";
 
 const About = () => {
-  const [text, setText] = useState("");
-  const fullText =
-    "Data Science & ML Enthusiast | AI Enthusiast | Python Developer";
-  const [index, setIndex] = useState(0);
+    const { isDarkMode } = useTheme();
 
-  useEffect(() => {
-    if (index < fullText.length) {
-      const timer = setTimeout(() => {
-        setText(text + fullText[index]);
-        setIndex(index + 1);
-      }, 100);
-      return () => clearTimeout(timer);
-    } else {
-      setTimeout(() => {
-        setText("");
-        setIndex(0);
-      }, 2000);
-    }
-  }, [index, text]);
-  const { isDarkMode } = useTheme();
+    const fullText = "Building Intelligent Systems | Exploring Deep Learning";
+    
+    // Animation variants
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: { 
+            opacity: 1,
+            transition: { 
+                staggerChildren: 0.2,
+                delayChildren: 0.3
+            }
+        }
+    };
 
-  return (
-    <section className={`about ${isDarkMode ? "dark-mode" : ""}`} id="about">
-      <div className="about-container">
-        <div className="about-profile">
-          <h2 className="welcome-text">Welcome to My Portfolio</h2>
-          <div className="profile-image">
-            <img src={profileImage} alt="Mahboob Alam" />
-          </div>
-          <div className="profile-title">
-            <h1 className="name-container">
-              <span className="greeting">Hi, I'm</span>
-              <span className="gradient-name"> Mahboob Alam</span>
-            </h1>
-            <h2 className="typing-text">{text}</h2>
-          </div>
-        </div>
+    const itemVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: { y: 0, opacity: 1 }
+    };
 
-        <div className="about-content">
-          <div className="about-text">
-            <p>
-               I've always loved solving problems. During my B.Tech, I learned how to code well, but I soon realized the most interesting challenges were hidden in data, not just in the code itself. I understood that the future was about using data to ask smarter questions.
-            </p>
-            <p>
-              This realization changed my plan. Instead of taking a job right away, I decided to spend a full year preparing for the GATE exam. It was a big commitment, but my goal was clear: to get into a top data science program.
-            </p>
-            <p>
-              My M.Tech at DIAT (DRDO) has been a fantastic opportunity to learn the most current ideas in AI. Here, I'm not just learning theory; I'm applying it to real-world problems. I focus on practical challenges, like making new Generative AI tools give reliable results. This has also led me to study Explainable AI (XAI), because I believe an AI's answer is only useful if we can understand how it reached its conclusion.
-            </p>
-            <p>
-                My main goal is to use my skills in Python and PyTorch to turn complicated data into simple, useful information. I am looking for a team that is serious about solving tough problems in NLP or predictive analytics, and I would do well in a place that is always searching for better answers.
-            </p>
-            <h4 className="warning">
-              <span className="star">*</span>
-              Currently, I'm working on my skills and projects which are shown
-              below. I made this web page for my future reference.
-              <span className="star">*</span>
-            </h4>
-          </div>
-        </div>
-      </div>
-      <div className="section-divider"></div>
-    </section>
-  );
+    return (
+        <section className={`about ${isDarkMode ? "dark-mode" : ""}`} id="about">
+            <div className="about-container container">
+                
+                <div className="hero-content">
+                    <motion.div 
+                        className="profile-section"
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <div className="profile-image-container">
+                            <img src={profileImage} alt="Mahboob Alam" className="profile-img" />
+                            <div className="blob-bg"></div>
+                        </div>
+                    </motion.div>
+
+                    <motion.div 
+                        className="text-section"
+                        variants={containerVariants}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        <motion.h2 variants={itemVariants} className="welcome-text">
+                            Hello, I'm
+                        </motion.h2>
+                        
+                        <motion.h1 variants={itemVariants} className="name-title">
+                            Mahboob Alam
+                        </motion.h1>
+
+                        <motion.div variants={itemVariants} className="typing-container">
+                             <h3 className="gradient-subtitle">{fullText}</h3>
+                        </motion.div>
+
+                        <motion.p variants={itemVariants} className="bio-text">
+                            I am currently pursuing an M.Tech in Data Science at DIAT-DRDO, Pune. I focus on Machine Learning and Deep Learning, working across the entire model lifecycle—from exploratory analysis to deployment. My background includes building cost-sensitive business solutions and conducting research on underwater image segmentation, which resulted in a peer-reviewed publication. I enjoy solving complex data problems and translating technical results into actionable business insights.
+                        </motion.p>
+
+                        <motion.div variants={itemVariants} className="cta-container">
+                            <a href="#projects" className="btn-primary">View Projects</a>
+                            <a href={resumePDF} download="Mahboob_Resume.pdf" className="btn-secondary">
+                                Resume <i className="fas fa-download"></i>
+                            </a>
+                            <a href="#contact" className="btn-secondary">Contact Me</a>
+                        </motion.div>
+
+                        <motion.div 
+                            className="status-card glass"
+                            variants={itemVariants}
+                        >
+                            <span className="star">✨</span>
+                            <p>Currently open for new opportunities and collaborations.</p>
+                        </motion.div>
+                    </motion.div>
+                </div>
+
+            </div>
+        </section>
+    );
 };
 
 export default About;

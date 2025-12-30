@@ -1,92 +1,35 @@
-.education-timeline {
-    width: 100%;
-    padding: 20px 0;
-}
-
-.timeline-container {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding-left: 30px;
-    border-left: 6px solid var(--text-secondary);
-    margin-left: 20px;
-}
-
-.resume-card {
-    width: 100%;
-    min-height: 200px;
-    position: relative;
-    padding: 25px;
-    background: var(--card-bg);
-    border-radius: 10px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
+/* Base Card Styles */
+/* These styles are applied to the .resume-card class */
 
 .resume-card h3 {
-    font-size: 1.2rem;
     color: var(--text-primary);
-    margin-bottom: 10px;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
 .resume-card .subtitle {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin-bottom: 10px;
+    color: var(--accent-color);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .resume-card .result {
-    font-size: 1rem;
-    color: var(--accent);
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 4px 10px;
+    background: var(--accent-glow);
+    border-radius: 50px;
 }
 
 .resume-card .description {
-    font-size: 0.9rem;
     color: var(--text-secondary);
     line-height: 1.6;
-}
-
-.resume-card::before {
-    content: '';
-    position: absolute;
-    left: -37px;
-    top: 50%;
-    width: 12px;
-    height: 12px;
-    background: var(--accent);
-    border-radius: 50%;
-}
-
-.card-content h3 {
-    font-size: 1.2rem;
-    color: var(--text-primary);
-    margin-bottom: 8px;
-}
-
-.subtitle {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-bottom: 8px;
-}
-
-.result {
-    color: var(--accent);
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.description {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
-@media (max-width: 768px) {
-    .resume-card {
-        min-height: 180px;
-        padding: 20px;
-    }
+    font-size: 1rem;
 }

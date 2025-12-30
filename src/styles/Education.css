@@ -1,173 +1,63 @@
-:root {
-    --edu-bg: #ffffff;
-    --timeline-color: #3498db;
-    --card-bg: #f8f9fa;
-    --text-primary: #2c3e50;
-    --text-secondary: #666;
-    --accent: #3498db;
-    --shadow: rgba(0, 0, 0, 0.1);
-}
-
-.dark-mode {
-    --edu-bg: #1a1c20;
-    --timeline-color: #61dafb;
-    --card-bg: #282c34;
-    --text-primary: #ffffff;
-    --text-secondary: #e0e0e0;
-    --accent: #61dafb;
-    --shadow: rgba(0, 0, 0, 0.3);
-}
-
-.education-section {
-    background-color: var(--edu-bg);
-    transition: all 0.3s ease;
+.education {
     padding: 80px 0;
+
 }
 
 .education-timeline {
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 .education-timeline h2 {
-    color: var(--text-primary);
-    font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 50px;
-    transition: color 0.3s ease;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .timeline-container {
     position: relative;
-    padding-left: 40px;
-    padding-top: 20px;
-    border-left: 4px solid var(--timeline-color);
-    margin: 0 auto;
-    margin-left: 200px;
-    margin-right: 100px;
-    max-width: 800px;
+    padding-left: 20px;
+    border-left: 3px solid var(--accent-glow);
 }
 
-.timeline-container::before,
-.timeline-container::after {
-    content: '';
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: var(--timeline-color);
-    box-shadow: 0 0 0 4px rgba(97, 218, 251, 0.2);
-    z-index: 1;
-    transition: all 0.3s ease;
-}
+/* ResumeCard styles are handled by the component's internal styles or we can duplicate the CSS if they are not shared in a global file. 
+   Since ResumeCard.css is imported by ResumeCard.js, we should actually move the specific timeline-connector styling to ResumeCard.css or keep it here if it's external.
+   
+   However, ResumeCard.js imports specific CSS. Let's make sure Education and Experience match.
+*/
 
-.timeline-container::before {
-    left: -14px;
-    top: 0;
-}
-
-.timeline-container::after {
-    left: -14px;
-    bottom: 0;
-}
+/* We rely on the styles defined in Experience.css for the resume-card class if they are global, 
+   BUT since we are importing separate CSS files, we need to ensure consistency. 
+   Ideally, we should have a `Timeline.css` shared by both. 
+   For now, I will replicate the styles to ensure exact match.
+*/
 
 .resume-card {
-    background: var(--card-bg);
-    padding: 30px;
+    padding: 2rem;
     border-radius: 12px;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 6px var(--shadow);
+    margin-bottom: 2rem;
     position: relative;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .resume-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px var(--shadow);
+    transform: translateX(10px);
 }
 
-.resume-card h3 {
-    color: var(--text-primary);
-    font-size: 1.4rem;
-    margin-bottom: 12px;
-    transition: color 0.3s ease;
-}
-
-.resume-card .subtitle {
-    color: var(--text-secondary);
-    font-size: 1rem;
-    margin-bottom: 10px;
-    transition: color 0.3s ease;
-}
-
-.resume-card .result {
-    color: var(--accent);
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    transition: color 0.3s ease;
-}
-
-.resume-card .description {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    transition: color 0.3s ease;
-}
-
-.section-divider {
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(
-        90deg,
-        rgba(52, 152, 219, 0.1) 0%,
-        rgba(52, 152, 219, 1) 50%,
-        rgba(52, 152, 219, 0.1) 100%
-    );
-    margin: 60px 0 0 0;
-    transition: background 0.3s ease;
-}
-
-@media (max-width: 992px) {
-    .timeline-container {
-        margin-left: 150px;
-        margin-right: 50px;
-    }
-}
-
-@media (max-width: 768px) {
-    .education-timeline h2 {
-        font-size: 2rem;
-    }
-
-    .timeline-container {
-        margin-left: 50px;
-        margin-right: 20px;
-        padding-left: 30px;
-    }
-
-    .resume-card {
-        padding: 25px;
-    }
-}
-
-@media (max-width: 480px) {
-    .timeline-container {
-        margin-left: 30px;
-        margin-right: 15px;
-    }
-
-    .resume-card h3 {
-        font-size: 1.2rem;
-    }
-
-    .resume-card .subtitle,
-    .resume-card .result {
-        font-size: 0.9rem;
-    }
+.resume-card::before {
+    content: '';
+    position: absolute;
+    left: -32px;
+    top: 30px;
+    width: 20px;
+    height: 20px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    border: 4px solid var(--secondary-bg);
+    /* Match section bg */
+    box-shadow: 0 0 10px var(--accent-glow);
 }

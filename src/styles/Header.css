@@ -1,173 +1,153 @@
-/* Base Header Styles */
 .header {
-  background: var(--header-bg, linear-gradient(135deg, #1a1c20 0%, #282c34 100%));
-  padding: 1.5rem 2rem;
   position: fixed;
-  width: 100%;
   top: 0;
   left: 0;
+  width: 100%;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
+  padding: 1.5rem 0;
+  transition: all 0.4s ease;
+  background: transparent;
+}
+
+.header.scrolled {
+  padding: 0.5rem 0;
+  background: transparent;
+}
+
+.header.scrolled .header-content {
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
+  border-radius: 50px;
+  padding: 0.8rem 2rem;
+  margin-top: 10px;
 }
 
 .header-content {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Navigation Styles */
-.nav-center {
-  flex: 1;
+/* Signature / Logo */
+.signature a {
+  font-family: 'Dancing Script', cursive;
+  /* Keeping the existing font choice if desired, or switch to Outfit */
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Desktop Nav */
+.nav-desktop {
   display: flex;
-  justify-content: center;
+  align-items: center;
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-links a {
-  color: var(--nav-text, #fff);
+  color: var(--text-primary);
   text-decoration: none;
-  font-size: 1.1rem;
   font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: var(--nav-hover, #61dafb);
-  background: rgba(97, 218, 251, 0.1);
+  color: var(--accent-color);
 }
 
-/* Theme Toggle Button */
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Controls */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .theme-toggle {
-  background: transparent;
+  background: none;
   border: none;
-  color: var(--nav-text, #fff);
+  color: var(--text-primary);
   font-size: 1.2rem;
   cursor: pointer;
-  padding: 0.5rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .theme-toggle:hover {
-  transform: rotate(90deg);
+  color: var(--accent-color);
+  transform: rotate(15deg);
 }
 
-/* Mobile Menu Button */
 .menu-button {
   display: none;
   background: none;
   border: none;
-  color: var(--nav-text, #fff);
+  color: var(--text-primary);
   font-size: 1.5rem;
   cursor: pointer;
 }
 
-/* Responsive Styles */
+/* Mobile Menu */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--nav-bg);
+  overflow: hidden;
+  border-top: 1px solid var(--glass-border);
+}
+
+.mobile-nav-links {
+  list-style: none;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-nav-links li a {
+  display: block;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+}
+
 @media (max-width: 768px) {
-  .header {
-      padding: 1rem;
+  .nav-desktop {
+    display: none;
   }
 
   .menu-button {
-      display: block;
+    display: block;
   }
-
-  .nav-links {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background: var(--header-bg, #282c34);
-      flex-direction: column;
-      padding: 1rem;
-  }
-
-  .nav-links.active {
-      display: flex;
-  }
-
-  .nav-links a {
-      padding: 0.8rem;
-      display: block;
-      text-align: center;
-  }
-}
-
-/* Theme Styles */
-:root {
-  --header-bg: linear-gradient(135deg, #1a1c20 0%, #282c34 100%);
-  --nav-text: #fff;
-  --nav-hover: #61dafb;
-}
-
-body.dark-mode {
-  --header-bg: linear-gradient(135deg, #000000 0%, #1a1c20 100%);
-  --nav-text: #fff;
-  --nav-hover: #61dafb;
-}
-
-body.light-mode {
-  --header-bg: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  --nav-text: #2c3e50;
-  --nav-hover: #3498db;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-
-.signature {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.8rem;
-  color: var(--text-primary);
-  position: relative;
-  padding-bottom: 5px;
-  display: inline-block;
-  transform: rotate(-15deg);
-  margin-left: 30px;
-  transition: all 0.3s ease;
-}
-
-.signature::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(90deg, var(--accent), transparent);
-  transform-origin: left;
-  transform: rotate(0deg);
-  transition: all 0.3s ease;
-}
-
-.signature:hover {
-  transform: rotate(-15deg) scale(1.1);
-}
-
-.signature:hover::after {
-  width: 110%;
-}
-
-@media (max-width: 768px) {
-  .signature {
-      font-size: 1.5rem;
-      margin-left: 20px;
-  }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
 }
