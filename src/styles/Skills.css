@@ -107,6 +107,10 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .skills {
+    padding: 60px 0;
+  }
+
   .skills-grid-wrapper {
     grid-template-columns: 1fr;
   }

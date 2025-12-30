@@ -196,6 +196,13 @@
 }
 
 @media (max-width: 768px) {
+
+    .blog-section,
+    .blog-post-section {
+        padding: 80px 0 40px;
+        min-height: auto;
+    }
+
     .blog-grid {
         grid-template-columns: 1fr;
     }

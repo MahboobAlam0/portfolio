@@ -164,3 +164,9 @@
   border: 1px solid var(--glass-border);
   background: var(--input-bg);
 }
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 60px 0;
+  }
+}
