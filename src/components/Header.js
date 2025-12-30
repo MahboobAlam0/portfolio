@@ -32,6 +32,19 @@ const Header = () => {
         return isHome ? anchor : `/${anchor}`;
     };
 
+    const handleHomeClick = (e) => {
+        // Prevent default only if we are already on home to handle smooth scroll
+        if (location.pathname === '/') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        setIsMenuOpen(false);
+    };
+
+    const handleSectionClick = () => {
+        setIsMenuOpen(false);
+    };
+
     return (
         <motion.header 
             className={`header ${scrolled ? 'scrolled' : ''}`}
@@ -45,14 +58,14 @@ const Header = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                    <Link to="/" onClick={handleHomeClick} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
                         <Logo size={50} />
                     </Link>
                 </motion.div>
 
                 <nav className="nav-desktop">
                     <ul className="nav-links">
-                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/" onClick={handleHomeClick}>Home</Link></li>
                         <li><a href={getLink('#skills')}>Skills</a></li>
                         <li><a href={getLink('#projects')}>Projects</a></li>
                         <li><Link to="/blog">Blog</Link></li>
@@ -89,19 +102,19 @@ const Header = () => {
                         transition={{ duration: 0.3 }}
                     >
                         <ul className="mobile-nav-links">
-                            <motion.li whileHover={{ x: 10 }} onClick={() => setIsMenuOpen(false)}>
+                            <motion.li whileHover={{ x: 10 }} onClick={handleHomeClick}>
                                 <Link to="/">Home</Link>
                             </motion.li>
-                            <motion.li whileHover={{ x: 10 }} onClick={() => setIsMenuOpen(false)}>
+                            <motion.li whileHover={{ x: 10 }} onClick={handleSectionClick}>
                                 <a href={getLink('#skills')}>Skills</a>
                             </motion.li>
-                            <motion.li whileHover={{ x: 10 }} onClick={() => setIsMenuOpen(false)}>
+                            <motion.li whileHover={{ x: 10 }} onClick={handleSectionClick}>
                                 <a href={getLink('#projects')}>Projects</a>
                             </motion.li>
                             <motion.li whileHover={{ x: 10 }} onClick={() => setIsMenuOpen(false)}>
                                 <Link to="/blog">Blog</Link>
                             </motion.li>
-                            <motion.li whileHover={{ x: 10 }} onClick={() => setIsMenuOpen(false)}>
+                            <motion.li whileHover={{ x: 10 }} onClick={handleSectionClick}>
                                 <a href={getLink('#contact')}>Contact</a>
                             </motion.li>
                         </ul>

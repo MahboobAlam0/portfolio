@@ -1,7 +1,7 @@
 import React from "react";
 import { useTheme } from "../context/ThemeContext";
 import { motion } from "framer-motion";
-import ResumeCard from "./ResumeCard";
+
 import useScrollReveal, { containerVariants, itemVariants } from "../hooks/useScrollReveal";
 import "../styles/Education.css";
 

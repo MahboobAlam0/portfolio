@@ -6,7 +6,13 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="footer-container" style={{ padding: '2rem', textAlign: 'center', borderTop: '1px solid var(--border-top)', background: 'var(--footer-bg)' }}>
+        <footer className="footer-container" style={{ 
+            padding: '2rem', 
+            textAlign: 'center', 
+            borderTop: '1px solid var(--glass-border)', 
+            background: 'var(--primary-bg)', 
+            marginTop: 'auto' 
+        }}>
             <div className="copyright">
                 <p>Designed & Built by <a href="https://github.com/MahboobAlam0" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}><strong>Mahboob Alam <i className="fab fa-github"></i></strong></a></p>
                 <p style={{ fontSize: '0.8rem', marginTop: '0.5rem', opacity: 0.7 }}>

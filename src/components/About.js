@@ -62,6 +62,15 @@ const About = () => {
                              <h3 className="gradient-subtitle">{fullText}</h3>
                         </motion.div>
 
+                        {/* Mobile-only profile image for interleaved layout */}
+                        <motion.div 
+                            className="profile-image-mobile"
+                            variants={itemVariants}
+                        >
+                            <img src={profileImage} alt="Mahboob Alam" className="profile-mobile-img" />
+                            <div className="blob-mobile-bg"></div>
+                        </motion.div>
+
                         <motion.p variants={itemVariants} className="bio-text">
                             I am currently pursuing an M.Tech in Data Science at DIAT-DRDO, Pune. I focus on Machine Learning and Deep Learning, working across the entire model lifecycle—from exploratory analysis to deployment. My background includes building cost-sensitive business solutions and conducting research on underwater image segmentation, which resulted in a peer-reviewed publication. I enjoy solving complex data problems and translating technical results into actionable business insights.
                         </motion.p>

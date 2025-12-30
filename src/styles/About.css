@@ -178,19 +178,65 @@
   color: var(--text-secondary);
 }
 
+/* Mobile specific image styles */
+.profile-image-mobile {
+  display: none;
+  /* Hidden by default */
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: 2rem auto;
+}
+
+.profile-mobile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  box-shadow: var(--shadow-lg);
+  border: 4px solid var(--secondary-bg);
+  animation: morph 8s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+
+.blob-mobile-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  background: var(--gradient-primary);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: morph 8s ease-in-out infinite 1s;
+  opacity: 0.3;
+  z-index: 1;
+  filter: blur(20px);
+}
+
 /* Responsive */
 @media (max-width: 968px) {
   .about {
     padding-top: 60px;
     min-height: auto;
-    /* Allow content to dictate height on mobile to prevent huge gaps */
     padding-bottom: 60px;
   }
 
   .hero-content {
-    flex-direction: column-reverse;
+    display: block;
+    /* Remove flex to allow standard flow */
     text-align: center;
-    gap: 3rem;
+  }
+
+  /* Hide the desktop side-by-side image */
+  .profile-section {
+    display: none;
+  }
+
+  /* Show the interleaved mobile image */
+  .profile-image-mobile {
+    display: block;
   }
 
   .text-section {
