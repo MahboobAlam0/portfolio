@@ -64,23 +64,25 @@
 
 @media (max-width: 768px) {
     .education {
-        padding: 60px 0;
+        padding: 50px 0;
     }
 
     .timeline-container {
-        padding-left: 20px;
-        margin-left: 10px;
-        /* Give some breathing room from screen edge */
+        padding-left: 0;
+        margin-left: 0;
+        border-left: none;
+        /* Remove timeline line */
     }
 
     .resume-card {
         padding: 1.5rem;
-        /* Reduced padding */
         margin-left: 0;
+        text-align: center;
+        /* Optional: Center text for better mobile balance */
     }
 
     .resume-card::before {
-        left: -32px;
-        /* Keep aligned with border */
+        display: none;
+        /* Remove timeline dot */
     }
 }
