@@ -101,7 +101,7 @@ h6 {
 }
 
 h2 {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     /* Massive headings */
     margin-bottom: 3rem;
     font-weight: 800;

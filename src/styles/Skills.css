@@ -115,3 +115,10 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .skills-items-grid {
+    grid-template-columns: 1fr;
+    /* Single column skills for very narrow screens */
+  }
+}

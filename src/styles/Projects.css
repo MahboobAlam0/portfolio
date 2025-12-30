@@ -165,8 +165,18 @@
   background: var(--input-bg);
 }
 
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .projects {
     padding: 60px 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 }

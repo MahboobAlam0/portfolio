@@ -99,7 +99,7 @@
 }
 
 .name-title {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.1;
@@ -107,7 +107,7 @@
 }
 
 .gradient-subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
   background: var(--gradient-text);
   -webkit-background-clip: text;
   background-clip: text;
