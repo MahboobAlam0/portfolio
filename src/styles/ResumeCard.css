@@ -1,5 +1,11 @@
-/* Base Card Styles */
-/* These styles are applied to the .resume-card class */
+/* Consolidated Global Resume Card Style Override */
+.resume-card {
+    border-radius: 20px;
+    /* Match Projects */
+    border: 1px solid var(--glass-border);
+    background: var(--card-bg);
+    /* Ensure visible background */
+}
 
 .resume-card h3 {
     color: var(--text-primary);
