@@ -71,6 +71,9 @@
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
+  word-break: break-all;
+  /* Critical fix for long emails */
+  overflow-wrap: anywhere;
 }
 
 /* Social Links */

@@ -32,16 +32,20 @@
 }
 
 /* Signature / Logo */
+/* Signature / Logo */
 .signature a {
-  font-family: 'Dancing Script', cursive;
-  /* Keeping the existing font choice if desired, or switch to Outfit */
-  font-size: 1.8rem;
-  font-weight: 700;
+  /* Font and alignment handled inline/via component */
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: opacity 0.3s ease;
+}
+
+.signature span {
   background: var(--gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-decoration: none;
-  cursor: pointer;
+  background-clip: text;
 }
 
 /* Desktop Nav */

@@ -4,6 +4,8 @@ import { useTheme } from '../context/ThemeContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../styles/Header.css';
 
+import Logo from './Logo';
+
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -43,7 +45,9 @@ const Header = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    <Link to="/">Mahboob Alam</Link>
+                    <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                        <Logo size={50} />
+                    </Link>
                 </motion.div>
 
                 <nav className="nav-desktop">
