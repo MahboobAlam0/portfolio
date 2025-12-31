@@ -36,7 +36,7 @@ const Skills = () => {
             ],
         },
         {
-            category: "Data Analysis Analysis",
+            category: "Data Analysis",
             items: [
                 { name: "Exploratory Data Analysis", icon: "fas fa-search", color: "#150458" },
                 { name: "Statistics", icon: "fas fa-calculator", color: "#013243" },
