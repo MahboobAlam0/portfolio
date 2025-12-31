@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import './styles/global.css';
 import './App.css';
+import CosmicBackground from './components/CosmicBackground';
 
 
 const AnimatedRoutes = () => {
@@ -30,6 +31,7 @@ const AnimatedRoutes = () => {
 function App() {
     return (
         <ThemeProvider>
+            <CosmicBackground />
             <Router>
                 <ScrollToTop />
                 <div className="App">

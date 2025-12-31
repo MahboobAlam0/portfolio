@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { projectsData } from '../data/projectsData';
 import { useTheme } from '../context/ThemeContext';
+import ScrollRevealWrapper from './ScrollRevealWrapper';
 import '../styles/ProjectDetails.css';
 
 const ProjectDetails = () => {
@@ -63,51 +64,37 @@ const ProjectDetails = () => {
                     <i className="fas fa-arrow-left"></i> Back to Home
                 </MagneticButton>
 
-                <motion.div 
-                    className="project-header"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ type: "spring", stiffness: 50, damping: 20 }}
-                >
-                    <h1>{project.title}</h1>
-                    <div className="tech-stack-detail">
-                        {project.techStack.map((tech, idx) => (
-                            <span key={idx} className="tech-tag">{tech}</span>
-                        ))}
+                <ScrollRevealWrapper>
+                    <div className="project-header">
+                        <h1>{project.title}</h1>
+                        <div className="tech-stack-detail">
+                            {project.techStack.map((tech, idx) => (
+                                <span key={idx} className="tech-tag">{tech}</span>
+                            ))}
+                        </div>
                     </div>
-                </motion.div>
+                </ScrollRevealWrapper>
 
-                <motion.div 
-                    className="project-banner"
-                    initial={{ scale: 0.8, opacity: 0, rotateX: 20 }}
-                    animate={{ scale: 1, opacity: 1, rotateX: 0 }}
-                    transition={{ duration: 0.8, type: "spring" }}
-                >
-                    <img src={project.image} alt={project.title} />
-                </motion.div>
-
-                <motion.div 
-                    className="project-info glass"
-                    initial={{ y: 100, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ 
-                        type: "spring", 
-                        stiffness: 60, 
-                        damping: 12, 
-                        delay: 0.2 
-                    }}
-                >
-                    <div className="project-description" dangerouslySetInnerHTML={{ __html: project.fullDescription }}></div>
-                    
-                    <div className="project-actions">
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="action-btn demo-btn">
-                            Live Demo <i className="fas fa-external-link-alt"></i>
-                        </a>
-                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="action-btn github-btn">
-                            View Code <i className="fab fa-github"></i>
-                        </a>
+                <ScrollRevealWrapper delay={0.1}>
+                    <div className="project-banner">
+                        <img src={project.image} alt={project.title} />
                     </div>
-                </motion.div>
+                </ScrollRevealWrapper>
+
+                <ScrollRevealWrapper delay={0.2}>
+                    <div className="project-info glass">
+                        <div className="project-description" dangerouslySetInnerHTML={{ __html: project.fullDescription }}></div>
+                        
+                        <div className="project-actions">
+                            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="action-btn demo-btn">
+                                Live Demo <i className="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="action-btn github-btn">
+                                View Code <i className="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ScrollRevealWrapper>
             </div>
         </section>
     );

@@ -2,7 +2,7 @@
     padding: 120px 0 80px;
     /* Top padding for fixed header */
     min-height: 100vh;
-    background: var(--primary-bg);
+    background: transparent;
 }
 
 .blog-section h2 {
@@ -115,7 +115,7 @@
 .blog-post-section {
     padding: 120px 0 80px;
     min-height: 100vh;
-    background: var(--primary-bg);
+    background: transparent;
 }
 
 .blog-post-container {

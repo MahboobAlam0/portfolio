@@ -2,35 +2,29 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { blogsData } from '../data/blogsData';
-import useScrollReveal, { containerVariants, itemVariants } from "../hooks/useScrollReveal";
+import ScrollRevealWrapper from './ScrollRevealWrapper';
 import { useTheme } from '../context/ThemeContext';
 import Header from './Header';
 import '../styles/Blog.css';
 
 const BlogList = () => {
     const { isDarkMode } = useTheme();
-    const { ref, controls } = useScrollReveal();
-
     return (
-        <section className={`blog-section ${isDarkMode ? 'dark-mode' : ''}`} ref={ref}>
+        <section className={`blog-section ${isDarkMode ? 'dark-mode' : ''}`}>
             <Header />
             <div className="container">
-                <motion.div
-                    initial="hidden"
-                    animate={controls}
-                    variants={containerVariants}
-                >
-                    <motion.div variants={itemVariants}>
+                <ScrollRevealWrapper>
+                    <div>
                         <h2>My Daily Learnings</h2>
                         <p className="blog-subtitle">Documenting my journey through Data Science & AI</p>
-                    </motion.div>
+                    </div>
+                </ScrollRevealWrapper>
 
-                    <div className="blog-grid">
-                        {blogsData.map((post, index) => (
+                <div className="blog-grid">
+                    {blogsData.map((post, index) => (
+                        <ScrollRevealWrapper key={post.id} delay={index * 0.1}>
                             <motion.div
-                                key={post.id}
                                 className="blog-card glass"
-                                variants={itemVariants}
                                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
                             >
                                 <div>
@@ -51,9 +45,9 @@ const BlogList = () => {
                                     Read Article <i className="fas fa-arrow-right"></i>
                                 </Link>
                             </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
+                        </ScrollRevealWrapper>
+                    ))}
+                </div>
             </div>
         </section>
     );

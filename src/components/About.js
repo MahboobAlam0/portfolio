@@ -72,7 +72,7 @@ const About = () => {
                         </motion.div>
 
                         <motion.p variants={itemVariants} className="bio-text">
-                            I am currently pursuing an M.Tech in Data Science at DIAT-DRDO, Pune. I focus on Machine Learning and Deep Learning, working across the entire model lifecycle—from exploratory analysis to deployment. My background includes building cost-sensitive business solutions and conducting research on underwater image segmentation, which resulted in a peer-reviewed publication. I enjoy solving complex data problems and translating technical results into actionable business insights.
+                            My journey into Data Science wasn't a straight line. After completing my B.Tech in CSE, I took a year to prepare for the GATE exam—a period of intense focus that unexpectedly sparked my deep interest in data and patterns. That pivot led me to my M.Tech at DIAT-DRDO, Pune, where I found the perfect environment to grow. Today, I dive deep into Machine Learning and Deep Learning, from building cost-sensitive business models to publishing paper on underwater image segmentation(under process). I love translating technical results into actionable insights and solving real-world problems with data.
                         </motion.p>
 
                         <motion.div variants={itemVariants} className="cta-container">

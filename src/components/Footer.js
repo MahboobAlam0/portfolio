@@ -6,18 +6,22 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="footer-container" style={{ 
-            padding: '2rem', 
-            textAlign: 'center', 
-            borderTop: '1px solid var(--glass-border)', 
-            background: 'var(--primary-bg)', 
-            marginTop: 'auto' 
+        <footer style={{
+            width: '100%',
+            borderTop: '1px solid var(--glass-border)',
+            background: 'var(--glass-bg)',
+            backdropFilter: 'blur(10px)',
+            marginTop: 'auto',
+            position: 'relative',
+            zIndex: 10
         }}>
-            <div className="copyright">
-                <p>Designed & Built by <a href="https://github.com/MahboobAlam0" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}><strong>Mahboob Alam <i className="fab fa-github"></i></strong></a></p>
-                <p style={{ fontSize: '0.8rem', marginTop: '0.5rem', opacity: 0.7 }}>
-                     &copy; {currentYear} • Made with <span style={{ color: '#e25555' }}>♥</span> & React
-                </p>
+            <div className="container" style={{ padding: '2rem 0', textAlign: 'center' }}>
+                <div className="copyright">
+                    <p>Designed & Built by <a href="https://github.com/MahboobAlam0" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}><strong>Mahboob Alam <i className="fab fa-github"></i></strong></a></p>
+                    <p style={{ fontSize: '0.8rem', marginTop: '0.5rem', opacity: 0.7 }}>
+                         &copy; {currentYear} • Made with <span style={{ color: '#e25555' }}>♥</span> & React
+                    </p>
+                </div>
             </div>
         </footer>
     );
