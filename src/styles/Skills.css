@@ -47,16 +47,23 @@
   background: var(--accent-color);
   margin: 10px auto 0;
   border-radius: 2px;
+  opacity: 0.5;
 }
 
 .skills-items-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
-  /* Removed flex: 1 to stop it from forcing items to stretch vertically */
 }
 
 .skill-item {
+  width: calc(50% - 0.75rem);
+  /* 2 items per row accounting for gap */
+  flex-grow: 1;
+  /* Allow items to fill space if needed, or stick to width */
+  max-width: calc(50% - 0.75rem);
+  /* Enforce 2 columns max */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,16 +71,21 @@
   gap: 10px;
   padding: 1.5rem 1rem;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--secondary-bg);
+  /* Use slight gray in light mode to be visible */
+  border: 1px solid var(--glass-border);
+  /* Define edges */
   transition: all 0.3s ease;
-  /* Enforce consistent size */
   height: 160px;
-  width: 100%;
   text-align: center;
 }
 
+/* Ensure odd last item is centered but same width (handled by justify-content: center) */
+
 .dark-mode .skill-item {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--input-bg);
+  /* Lighter slate in dark mode for visibility */
+  border-color: var(--glass-border);
 }
 
 .skill-item:hover {
@@ -93,7 +105,7 @@
 }
 
 .skill-item:hover .icon-box {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.1);
 }
 
 .skill-item span {

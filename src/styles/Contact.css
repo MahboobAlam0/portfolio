@@ -140,7 +140,8 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px var(--accent-glow);
+  background: var(--card-bg);
+  /* Slight background shift on focus */
 }
 
 .submit-btn {

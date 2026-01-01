@@ -21,7 +21,16 @@
     align-items: flex-start;
     max-width: 900px;
     margin: 0 auto;
+    margin: 0 auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--secondary-bg);
+    /* Use light gray instead of white/glass for visibility */
+    border: 1px solid var(--glass-border);
+}
+
+.dark-mode .publication-card {
+    background: var(--card-bg);
+    /* Deep slate in dark mode */
 }
 
 .publication-card:hover {

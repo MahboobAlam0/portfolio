@@ -9,10 +9,7 @@
     text-align: center;
     margin-bottom: 1rem;
     font-size: 2.5rem;
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text-primary);
 }
 
 .blog-subtitle {
@@ -131,6 +128,9 @@
     text-decoration: none;
     margin-bottom: 2rem;
     transition: color 0.3s ease;
+    position: relative;
+    z-index: 10;
+    /* Ensure clickable */
 }
 
 .back-link:hover {
@@ -199,7 +199,8 @@
 
     .blog-section,
     .blog-post-section {
-        padding: 80px 0 40px;
+        padding: 100px 0 40px;
+        /* Increased to prevent header overlap */
         min-height: auto;
     }
 

@@ -1,202 +1,24 @@
-/* Container */
+/* Simple Professional Divider */
 .section-divider-container {
-    position: relative;
     width: 100%;
-    height: 100px;
+    padding: 2rem 0;
+    /* Reduced padding for cleaner look */
     display: flex;
-    align-items: center;
     justify-content: center;
-    overflow: hidden;
+    align-items: center;
     margin: 0;
-    pointer-events: none;
-    /* Let clicks pass through */
 }
 
-/* The Main Wrapper */
-.orbital-flux {
-    position: relative;
+.section-divider-line {
     width: 100%;
-    max-width: 1000px;
-    height: 4px;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 1px;
+    background-color: var(--glass-border);
+    /* Subtle line color from global theme */
+    opacity: 0.6;
 }
 
-/* Central Beam */
-.flux-beam {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg,
-            transparent 0%,
-            var(--accent-color) 20%,
-            #fff 50%,
-            var(--accent-color) 80%,
-            transparent 100%);
-    transform: translateY(-50%);
-    box-shadow: 0 0 15px var(--accent-color), 0 0 30px var(--accent-color);
-    opacity: 0.8;
-    animation: beam-pulse 3s ease-in-out infinite;
-    border-radius: 50%;
-}
-
-@keyframes beam-pulse {
-
-    0%,
-    100% {
-        opacity: 0.5;
-        width: 80%;
-        left: 10%;
-    }
-
-    50% {
-        opacity: 1;
-        width: 100%;
-        left: 0;
-    }
-}
-
-/* Oscillating Strands */
-.energy-strand {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    opacity: 0.7;
-}
-
-/* Strand 1: Sine Wave simulation using complex heavy gradients/masking was archaic. 
-   We'll use a pseudo-element animation trick for a smooth "wave" look. */
-
-.energy-strand::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    background: repeating-linear-gradient(90deg,
-            transparent,
-            transparent 50px,
-            var(--accent-color) 50px,
-            var(--accent-color) 52px);
-    filter: blur(4px);
-    opacity: 0.5;
-    animation: move-strand 5s linear infinite;
-    mask-image: radial-gradient(circle at center, black 50%, transparent 90%);
-}
-
-/* Unique particle system simulating orbiting electrons */
-.particle {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #fff;
-    box-shadow: 0 0 10px #fff, 0 0 20px var(--accent-color);
-    offset-path: path('M 0 0 Q 250 -30 500 0 T 1000 0');
-    /* This path needs to be dynamic or roughly fixed to container. 
-       Since container width varies, we use a simple animation instead. */
-}
-
-/* Re-implementing particles as orbits using pure transform logic for responsiveness */
-.particles {
-    position: absolute;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.particle {
-    position: absolute;
-    offset-anchor: center;
-    animation: orbit-flow 6s linear infinite;
-    opacity: 0;
-}
-
-/* We create a 'flow' where particles travel across the screen in a wave */
-@keyframes orbit-flow {
-    0% {
-        transform: translateX(-50vw) translateY(0) scale(0);
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 1;
-        transform: translateX(-40vw) translateY(-15px) scale(1);
-    }
-
-    25% {
-        transform: translateX(-20vw) translateY(0) scale(1.2);
-    }
-
-    40% {
-        transform: translateX(0) translateY(15px) scale(1);
-    }
-
-    60% {
-        transform: translateX(20vw) translateY(0) scale(1.2);
-    }
-
-    75% {
-        transform: translateX(40vw) translateY(-15px) scale(1);
-    }
-
-    90% {
-        opacity: 1;
-        transform: translateX(50vw) translateY(0) scale(0);
-    }
-
-    100% {
-        transform: translateX(60vw) translateY(0) scale(0);
-        opacity: 0;
-    }
-}
-
-.particle:nth-child(1) {
-    animation-delay: 0s;
-    background: #a855f7;
-}
-
-.particle:nth-child(2) {
-    animation-delay: 1.2s;
-    background: #3b82f6;
-}
-
-.particle:nth-child(3) {
-    animation-delay: 2.4s;
-    background: #ec4899;
-}
-
-.particle:nth-child(4) {
-    animation-delay: 3.6s;
-    background: #14b8a6;
-}
-
-.particle:nth-child(5) {
-    animation-delay: 4.8s;
-    background: #f59e0b;
-}
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .section-divider-container {
-        height: 60px;
-        /* Compress on mobile */
-    }
-
-    .flux-beam {
-        height: 1px;
-    }
-
-    .particle {
-        width: 4px;
-        height: 4px;
+        padding: 1.5rem 0;
     }
 }

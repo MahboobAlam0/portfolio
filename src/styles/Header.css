@@ -42,10 +42,7 @@
 }
 
 .signature span {
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent-color);
 }
 
 /* Desktop Nav */
