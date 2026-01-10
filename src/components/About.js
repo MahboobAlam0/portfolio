@@ -2,7 +2,7 @@ import React from "react";
 import { useTheme } from "../context/ThemeContext";
 import profileImage from "../assets/images/ProfileImage/Profile.png";
 import { motion } from "framer-motion";
-import resumePDF from "../assets/Mahboob_Resume.pdf";
+import resumePDF from "../assets/Resume_Fresher_Mahboob.pdf";
 import "../styles/About.css";
 
 const About = () => {

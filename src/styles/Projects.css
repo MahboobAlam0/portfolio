@@ -179,3 +179,35 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* New Badge */
+.new-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #00f260 0%, #0575e6 100%);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(5, 117, 230, 0.4);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  z-index: 10;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(5, 117, 230, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(5, 117, 230, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(5, 117, 230, 0);
+  }
+}

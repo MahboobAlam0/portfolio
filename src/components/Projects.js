@@ -48,6 +48,9 @@ const Projects = () => {
                                                             </span>
                                                         </div>
                                                     </div>
+                                                    {project.isNew && (
+                                                        <div className="new-badge">New</div>
+                                                    )}
                                                 </Link>
                                             </div>
                                             <div className="project-content">
