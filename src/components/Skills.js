@@ -15,7 +15,7 @@ const Skills = ({ isStandalone = true }) => {
         { name: "Data Structures & Algorithms", percentage: "80%" },
         { name: "Scikit-learn", percentage: "85%" },
         { name: "Deep Learning Architectures (CNNs, Transformers)", percentage: "80%" },
-        { name: "PyTorch & TensorFlow", percentage: "80%" },
+        { name: "PyTorch", percentage: "80%" },
         { name: "Computer Vision (YOLO, OpenCV)", percentage: "75%" },
         { name: "Cost-Sensitive Learning & Optimization", percentage: "80%" },
         { name: "Image Segmentation", percentage: "75%" },
