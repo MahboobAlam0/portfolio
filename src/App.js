@@ -8,10 +8,10 @@ import BlogList from './components/BlogList';
 import BlogPost from './components/BlogPost';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import BackToTop from './components/BackToTop';
 import './styles/global.css';
 import './App.css';
-
-
+import ProfessionalBackground from './components/ProfessionalBackground';
 
 const AnimatedRoutes = () => {
     const location = useLocation();
@@ -31,11 +31,12 @@ const AnimatedRoutes = () => {
 function App() {
     return (
         <ThemeProvider>
-
+            <ProfessionalBackground />
             <Router>
                 <ScrollToTop />
                 <div className="App">
                     <AnimatedRoutes />
+                    <BackToTop />
                     <Footer />
                 </div>
             </Router>

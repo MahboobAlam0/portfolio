@@ -1,0 +1,146 @@
+/* Resume Section Styles */
+.resume-section {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.resume-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.resume-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    background: var(--glass-bg);
+    /* Use glass bg for better integration */
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    /* Subtle border */
+}
+
+.resume-tab {
+    flex: 1;
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-secondary);
+    padding: 1.5rem 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    text-align: center;
+    border-radius: 0;
+    border-right: 1px solid var(--glass-border);
+    /* Separators */
+}
+
+.resume-tab:last-child {
+    border-right: none;
+}
+
+.resume-tab:hover {
+    color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.resume-tab.active {
+    color: var(--primary-bg);
+    background: var(--accent-color);
+    box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.4);
+    font-weight: 600;
+}
+
+.resume-content-wrapper {
+    min-height: 400px;
+    position: relative;
+    padding-left: 2rem;
+}
+
+/* Timeline Line */
+.timeline-content {
+    border-left: 3px solid var(--glass-border);
+    /* Adaptive subtle line */
+    padding-left: 3rem;
+    position: relative;
+}
+
+/* Resume Card Wrapper for Timeline */
+.education-standalone .resume-card,
+.experience-standalone .resume-card {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+/* The Dot Connector */
+.education-standalone .resume-card::before,
+.experience-standalone .resume-card::before {
+    content: '';
+    position: absolute;
+    left: -3.7rem;
+    /* Adjusted for 3px border */
+    top: 20px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary-bg);
+    /* Adaptive center (White/Dark) */
+    border: 3px solid var(--accent-color);
+    /* Adaptive ring (Black/Blue) */
+    z-index: 10;
+    box-shadow: 0 0 10px var(--accent-glow);
+    /* Adaptive glow */
+}
+
+/* Horizontal Line from Dot to Card */
+.education-standalone .resume-card::after,
+.experience-standalone .resume-card::after {
+    content: '';
+    position: absolute;
+    left: -3rem;
+    top: 28px;
+    width: 3rem;
+    height: 3px;
+    background: var(--glass-border);
+    /* Match the vertical line */
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .resume-tabs {
+        flex-direction: column;
+        background: transparent;
+        border: none;
+    }
+
+    .resume-tab {
+        border-radius: 10px;
+        margin-bottom: 1rem;
+        background: var(--card-bg);
+        border: 1px solid var(--glass-border);
+    }
+
+    .timeline-content {
+        padding-left: 1rem;
+        border-left: 2px solid var(--glass-border);
+    }
+
+    .education-standalone .resume-card::before,
+    .experience-standalone .resume-card::before {
+        left: -1.35rem;
+        width: 12px;
+        height: 12px;
+        border-width: 2px;
+    }
+
+    .education-standalone .resume-card::after {
+        display: none;
+    }
+}

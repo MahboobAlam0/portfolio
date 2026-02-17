@@ -8,7 +8,7 @@ import "../styles/About.css";
 const About = () => {
     const { isDarkMode } = useTheme();
 
-    const fullText = "Building Intelligent Systems | Exploring Deep Learning";
+    const fullText = "Data Scientist | Machine Learning Engineer";
     
     // Animation variants
     const containerVariants = {
@@ -31,21 +31,22 @@ const About = () => {
         <section className={`about ${isDarkMode ? "dark-mode" : ""}`} id="about">
             <div className="about-container container">
                 
-                <div className="hero-content">
+                <div className="about-content-grid">
+                    {/* Section 1: Image */}
                     <motion.div 
-                        className="profile-section"
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
+                        className="about-image-section"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6 }}
                     >
                         <div className="profile-image-container">
                             <img src={profileImage} alt="Mahboob Alam" className="profile-img" />
-                            <div className="blob-bg"></div>
                         </div>
                     </motion.div>
 
+                    {/* Section 2: Summary */}
                     <motion.div 
-                        className="text-section"
+                        className="about-summary-section"
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
@@ -62,17 +63,8 @@ const About = () => {
                              <h3 className="gradient-subtitle">{fullText}</h3>
                         </motion.div>
 
-                        {/* Mobile-only profile image for interleaved layout */}
-                        <motion.div 
-                            className="profile-image-mobile"
-                            variants={itemVariants}
-                        >
-                            <img src={profileImage} alt="Mahboob Alam" className="profile-mobile-img" />
-                            <div className="blob-mobile-bg"></div>
-                        </motion.div>
-
                         <motion.p variants={itemVariants} className="bio-text">
-                            My journey into Data Science wasn't a straight line. After completing my B.Tech in CSE, I took a year to prepare for the GATE exam—a period of intense focus that unexpectedly sparked my deep interest in data and patterns. That pivot led me to my M.Tech at DIAT-DRDO, Pune, where I found the perfect environment to grow. Today, I dive deep into Machine Learning and Deep Learning, from building cost-sensitive business models to publishing paper on underwater image segmentation(under process). I love translating technical results into actionable insights and solving real-world problems with data.
+                            I am a Data Scientist and Machine Learning Engineer passionate about building scalable, intelligent systems. My focus is on bridging the gap between research and production—developing deep learning models for edge devices, engineering robust data pipelines, and optimizing predictive algorithms for business impact. With a strong foundation in Computer Science and specialized research in AI (DIAT-DRDO), I enjoy solving complex, real-world problems through data-driven innovation.
                         </motion.p>
 
                         <motion.div variants={itemVariants} className="cta-container">
@@ -81,14 +73,6 @@ const About = () => {
                                 Resume <i className="fas fa-download"></i>
                             </a>
                             <a href="#contact" className="btn-secondary">Contact Me</a>
-                        </motion.div>
-
-                        <motion.div 
-                            className="status-card glass"
-                            variants={itemVariants}
-                        >
-                            <span className="star">✨</span>
-                            <p>Currently open for new opportunities and collaborations.</p>
                         </motion.div>
                     </motion.div>
                 </div>

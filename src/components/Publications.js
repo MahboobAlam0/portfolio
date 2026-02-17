@@ -32,11 +32,16 @@ const Publications = () => {
                     <h3>Physics-Informed Attention U-Net (PIAUNet): An Enhanced U-Net Framework for Underwater Segmentation in Aquaculture</h3>
                     <p className="authors"><strong>Alam, M.</strong>, et al.</p>
                     <p className="venue">
-                        <em>Proceedings of Cutting Edge Technologies in Advanced Computing</em>, Nov 2025.
+                        <em>Indian Journal of Technical Education</em>, Vol.48 - No. 2 - December 2025.
                     </p>
                     <div className="pub-tags">
                         <span className="tag">Peer-reviewed</span>
-                        <span className="tag">Indian Journal of Technical Education (Under Process)</span>
+                        <span className="tag">Indian Journal of Technical Education</span>
+                    </div>
+                    <div className="pub-links">
+                        <a href="https://www.ijteonline.in/special_issues" target="_blank" rel="noopener noreferrer" className="pub-link">
+                            View Publication <i className="fas fa-external-link-alt"></i>
+                        </a>
                     </div>
                 </div>
             </motion.div>

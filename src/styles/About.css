@@ -7,29 +7,29 @@
   overflow: hidden;
 }
 
-
-
-.hero-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.about-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  /* Image takes less space than text */
   gap: 4rem;
-  z-index: 1;
+  align-items: center;
+  width: 100%;
   position: relative;
+  z-index: 5;
 }
 
-/* Profile Image Area */
-.profile-section {
-  flex: 1;
+/* Image Section */
+.about-image-section {
   display: flex;
   justify-content: center;
-  position: relative;
+  align-items: center;
 }
 
 .profile-image-container {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 400px;
+  /* Slightly larger for emphasis */
+  height: 400px;
   z-index: 2;
 }
 
@@ -38,21 +38,21 @@
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  /* Circle crop to look professional */
   box-shadow: var(--shadow-lg);
   border: 4px solid var(--glass-border);
-  /* Professional border */
   position: relative;
   z-index: 2;
+  transition: transform 0.3s ease;
 }
 
-/* Removed Blob Background */
+.profile-img:hover {
+  transform: scale(1.02);
+}
 
-/* Removed Morph Keyframes */
-
-/* Text Area */
-.text-section {
-  flex: 1.2;
+/* Summary Section */
+.about-summary-section {
+  display: flex;
+  flex-direction: column;
 }
 
 .welcome-text {
@@ -61,13 +61,11 @@
   font-weight: 500;
   margin-bottom: 0.5rem;
   text-align: left;
-  background: none;
-  -webkit-text-fill-color: initial;
 }
 
 .name-title {
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  font-weight: 700;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 800;
   margin-bottom: 1rem;
   line-height: 1.1;
   color: var(--text-primary);
@@ -76,7 +74,6 @@
 .gradient-subtitle {
   font-size: clamp(1.2rem, 3vw, 1.8rem);
   color: var(--accent-color);
-  /* Solid color instead of gradient */
   margin-bottom: 1.5rem;
   font-weight: 600;
 }
@@ -86,20 +83,21 @@
   line-height: 1.8;
   color: var(--text-secondary);
   margin-bottom: 2.5rem;
-  max-width: 600px;
+  max-width: 650px;
+  /* Improved readability */
 }
 
 .cta-container {
   display: flex;
-  gap: 0.8rem;
-  margin-bottom: 3rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
   align-items: center;
 }
 
 .btn-primary,
 .btn-secondary {
-  padding: 0.8rem 1.2rem;
+  padding: 0.8rem 1.5rem;
   border-radius: 50px;
   font-weight: 600;
   text-decoration: none;
@@ -109,16 +107,14 @@
   justify-content: center;
   gap: 0.5rem;
   white-space: nowrap;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
-.btn-primary,
-.btn-secondary {
+.btn-primary {
   background: var(--accent-color);
   border: 1px solid var(--accent-color);
   color: white;
-  /* Contrast text */
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
@@ -128,9 +124,8 @@
 }
 
 .btn-primary:hover {
-  background: var(--text-secondary);
-  border-color: var(--text-secondary);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn-secondary:hover {
@@ -139,121 +134,49 @@
   transform: translateY(-2px);
 }
 
-.status-card {
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.status-card p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-}
-
-/* Mobile specific image styles */
-.profile-image-mobile {
-  display: none;
-  /* Hidden by default */
-  position: relative;
-  width: 280px;
-  height: 280px;
-  margin: 2rem auto;
-}
-
-.profile-mobile-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  /* Circle crop */
-  box-shadow: var(--shadow-lg);
-  position: relative;
-  z-index: 2;
-  border: 4px solid var(--glass-border);
-}
-
-/* Removed Blob Mobile Bg */
-
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 968px) {
-  .about {
-    padding-top: 60px;
-    min-height: auto;
-    padding-bottom: 60px;
-  }
-
-  .hero-content {
-    display: block;
-    /* Remove flex to allow standard flow */
+  .about-content-grid {
+    grid-template-columns: 1fr;
+    /* Stack visually */
+    gap: 3rem;
     text-align: center;
   }
 
-  /* Hide the desktop side-by-side image */
-  .profile-section {
-    display: none;
+  .about-image-section {
+    order: 1;
+    /* Image first? Or text first? Standard is Image first or swapped */
+    margin-bottom: 1rem;
   }
 
-  /* Show the interleaved mobile image */
-  .profile-image-mobile {
-    display: block;
-  }
-
-  .text-section {
-    display: flex;
-    flex-direction: column;
+  .about-summary-section {
+    order: 2;
     align-items: center;
-    width: 100%;
+    /* Center text on mobile */
+  }
+
+  .profile-image-container {
+    width: 300px;
+    height: 300px;
   }
 
   .bio-text {
     margin-left: auto;
     margin-right: auto;
-    padding: 0 1rem;
-  }
-
-  .welcome-text,
-  .name-title {
-    text-align: center;
-  }
-
-  .name-title {
-    font-size: 3rem;
-  }
-
-  .profile-image-container {
-    width: 280px;
-    height: 280px;
-  }
-}
-
-@media (max-width: 480px) {
-  .name-title {
-    font-size: 2.5rem;
-  }
-
-  .profile-image-container {
-    width: 240px;
-    height: 240px;
   }
 
   .cta-container {
     justify-content: center;
-    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-image-container {
+    width: 250px;
+    height: 250px;
   }
 
-  .btn-primary,
-  .btn-secondary {
-    padding: 0.7rem 1rem;
-    font-size: 0.85rem;
-    flex: 1 1 auto;
-    /* Allow buttons to shrink slightly if needed */
-  }
-
-  .status-card {
-    text-align: center;
-    justify-content: center;
+  .name-title {
+    font-size: 2.5rem;
   }
 }

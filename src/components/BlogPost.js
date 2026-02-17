@@ -65,6 +65,9 @@ const BlogPost = () => {
                         </motion.h1>
                         <div className="post-meta">
                             <span>{post.date}</span>
+                            <span className="read-time-post">
+                                <i className="far fa-clock"></i> {Math.ceil(post.content.replace(/<[^>]+>/g, '').split(/\s+/).length / 200)} min read
+                            </span>
                             <div className="blog-tags">
                                 {post.tags.map((tag, i) => (
                                     <span key={i} className="blog-tag">#{tag}</span>

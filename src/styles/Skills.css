@@ -1,136 +1,91 @@
 .skills {
-  padding: 100px 0;
+  padding: 10px 0;
   position: relative;
-
-}
-
-.skills-grid-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-  align-items: stretch;
-  /* Cards stretch to same height */
-}
-
-.skill-category-card {
-  padding: 2rem;
-  border-radius: 20px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* Ensure content doesn't stretch to fill vertical space randomly */
-  justify-content: flex-start;
-}
-
-.skill-category-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
-}
-
-.category-title {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: var(--text-primary);
-  position: relative;
-  display: inline-block;
   width: 100%;
 }
 
-.category-title::after {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: var(--accent-color);
-  margin: 10px auto 0;
-  border-radius: 2px;
-  opacity: 0.5;
-}
-
-.skills-items-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.skill-item {
-  width: calc(50% - 0.75rem);
-  /* 2 items per row accounting for gap */
-  flex-grow: 1;
-  /* Allow items to fill space if needed, or stick to width */
-  max-width: calc(50% - 0.75rem);
-  /* Enforce 2 columns max */
+.skills-progress-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 1.5rem 1rem;
-  border-radius: 12px;
-  background: var(--secondary-bg);
-  /* Use slight gray in light mode to be visible */
-  border: 1px solid var(--glass-border);
-  /* Define edges */
-  transition: all 0.3s ease;
-  height: 160px;
-  text-align: center;
+  gap: 2rem;
+  width: 100%;
 }
 
-/* Ensure odd last item is centered but same width (handled by justify-content: center) */
-
-.dark-mode .skill-item {
-  background: var(--input-bg);
-  /* Lighter slate in dark mode for visibility */
-  border-color: var(--glass-border);
+.skills-list.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 2rem;
+  width: 100%;
 }
 
-.skill-item:hover {
-  background: var(--primary-bg);
-  box-shadow: var(--shadow-sm);
+@media (max-width: 768px) {
+  .skills-list.grid-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
-.icon-box {
-  font-size: 2.5rem;
-  transition: transform 0.3s ease;
-  margin-bottom: 5px;
-  height: 50px;
-  /* Fixed height for icon container */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.skill-item:hover .icon-box {
-  transform: scale(1.1);
-}
-
-.skill-item span {
+.skill-category-title {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   font-weight: 500;
+}
+
+.skill-bar-wrapper {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.skill-info h4 {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.skill-info span {
   font-size: 0.9rem;
   color: var(--text-secondary);
-  line-height: 1.3;
+}
+
+.progress-line {
+  height: 8px;
+  /* Slightly thicker for visual impact */
   width: 100%;
-  word-wrap: break-word;
+  background: rgba(255, 255, 255, 0.05);
+  /* Very subtle dark track */
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
 }
 
-/* Responsive */
+.progress-bar-inner {
+  height: 100%;
+  display: block;
+  border-radius: 10px;
+  /* The requested blue to pink/red gradient */
+  background: linear-gradient(90deg, #1e90ff 0%, #ff007f 100%);
+  position: relative;
+  box-shadow: 0 0 10px rgba(255, 0, 127, 0.4);
+  /* Glow effect */
+}
+
 @media (max-width: 768px) {
-  .skills {
-    padding: 60px 0;
+  .skill-category-title {
+    font-size: 1rem;
   }
 
-  .skills-grid-wrapper {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .skills-items-grid {
-    grid-template-columns: 1fr;
-    /* Single column skills for very narrow screens */
+  .skill-info h4 {
+    font-size: 0.9rem;
   }
 }

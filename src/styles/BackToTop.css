@@ -1,0 +1,39 @@
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--primary-bg);
+    box-shadow: 0 4px 15px var(--glass-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.back-to-top:hover {
+    background: var(--accent-color);
+    color: white;
+    box-shadow: 0 0 20px var(--accent-glow);
+    border-color: var(--accent-color);
+}
+
+.back-to-top i {
+    font-size: 1.2rem;
+}
+
+/* Dark mode overrides if needed, though adaptive vars handle most */
+.back-to-top.dark-mode {
+    background: rgba(30, 41, 59, 0.8);
+}
+
+.back-to-top.dark-mode:hover {
+    background: var(--accent-color);
+}

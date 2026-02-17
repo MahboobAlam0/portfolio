@@ -16,7 +16,7 @@
     /* Slate-600 */
 
     --card-bg: #ffffff;
-    --glass-bg: rgba(255, 255, 255, 0.95);
+    --glass-bg: rgba(255, 255, 255, 0.85);
     --glass-border: #e2e8f0;
     /* Slate-200 */
 
@@ -52,7 +52,7 @@ body.dark-mode {
 
     /* Clean Dark Cards */
     --card-bg: #1e293b;
-    --glass-bg: rgba(30, 41, 59, 0.95);
+    --glass-bg: rgba(30, 41, 59, 0.85);
     --glass-border: #334155;
 
     --input-bg: #334155;
@@ -84,9 +84,10 @@ body {
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--primary-bg);
+    background-color: transparent;
+    /* Handled by ProfessionalBackground */
     color: var(--text-primary);
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: color 0.5s ease;
     overflow-x: hidden;
     line-height: 1.6;
 }

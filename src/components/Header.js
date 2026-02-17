@@ -73,7 +73,6 @@ const Header = () => {
                 <nav className="nav-desktop">
                     <ul className="nav-links">
                         <li><Link to="/" onClick={handleHomeClick}>Home</Link></li>
-                        <li><a href={getLink('#skills')} onClick={(e) => handleNavClick(e, 'skills')}>Skills</a></li>
                         <li><a href={getLink('#projects')} onClick={(e) => handleNavClick(e, 'projects')}>Projects</a></li>
                         <li><Link to="/blog">Blog</Link></li>
                         <li><a href={getLink('#contact')} onClick={(e) => handleNavClick(e, 'contact')}>Contact</a></li>
