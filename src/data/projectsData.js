@@ -6,11 +6,39 @@ import churnCover from '../assets/images/ProjectImages/Churn_Cover.png';
 import insuranceCover from '../assets/images/ProjectImages/Insurance_Cover.png';
 import piauNetCover from '../assets/images/ProjectImages/PIAUNet_Cover.png';
 import urbanMobilityCover from '../assets/images/ProjectImages/UrbanMobility_Cover.png';
+import finSightCover from '../assets/images/ProjectImages/FinSight_Cover.png';
 
 
 import hmtEcgCover from '../assets/images/ProjectImages/HMT_ECG_Cover.png';
 
 export const projectsData = [
+    {
+        id: 'finsight-ai',
+        title: 'FinSight: Financial Sentiment & Narrative Intelligence System',
+        description: 'An automated market intelligence pipeline that ingests raw news, quantifies financial sentiment using FinBERT, and synthesizes strategic insights using LLMs.',
+        isNew: true,
+        overview: 'An automated <strong>End-to-End Market Intelligence Pipeline</strong> that ingests raw news, quantifies financial sentiment using domain-specific BERT models, and synthesizes strategic insights using Large Language Models (LLM).',
+        problem: 'In the modern financial ecosystem, analysts are overwhelmed by the velocity of news. Generic NLP models fail to capture financial nuances (e.g., "profit warning" vs "cost cutting"), and manually processing real-time news streams is impossible, leading to information overload and missed opportunities.',
+        solution: `I engineered a <strong>Lambda Architecture</strong> pipeline for real-time financial intelligence:
+        <br><br>
+        <strong>1. Data Ingestion (The "Eyes"):</strong>
+        Built a concurrent web scraper using <code>BeautifulSoup</code> and <code>concurrent.futures</code> to fetch news with <strong>~85% reduced latency</strong>. Implements heuristic filtering to reject irrelevant noise.
+        <br><br>
+        <strong>2. Semantic Analysis (The "Brain"):</strong>
+        Replaced generic sentiment models with <strong>FinBERT</strong> (<code>ProsusAI/finbert</code>), enabling state-of-the-art accuracy in classifying financial text. Utilizes a distilled BART model for abstractive summarization.
+        <br><br>
+        <strong>3. Generative Reasoning (The "Analyst"):</strong>
+        Orchestrated an LLM-based agent (powered by <strong>Groq Llama-3-70b</strong>) to perform high-level cognitive tasks like risk detection and narrative synthesis, returning strictly typed JSON.`,
+        key_results: [
+            '<strong>Sentiment Accuracy:</strong> ~97% on standard financial phrasebank datasets via FinBERT.',
+            '<strong>End-to-End Latency:</strong> &lt; 30 seconds for full company analysis (Scrape + Summary + Sentiment).',
+            '<strong>Inference Speed:</strong> LLM response &lt; 1 second using Groq LPU technology.'
+        ],
+        impact: 'Democratizes institutional-grade financial analytics, allowing retail investors to instantly understand market narratives and risks without reading hundreds of articles.',
+        image: finSightCover,
+        techStack: ['Python', 'FastAPI', 'FinBERT', 'LLM (Groq)', 'Docker', 'Streamlit'],
+        github: 'https://github.com/MahboobAlam0/finsight-ai',
+    },
     {
         id: 'hmt-ecg-net',
         title: 'HMT-ECGNet: Lightweight ECG AI',
@@ -44,7 +72,7 @@ export const projectsData = [
         id: 'urban-mobility-ops',
         title: 'Urban Mobility Operations Center',
         description: 'Scalable ELT pipeline and operations intelligence dashboard for large-scale bike-sharing networks.',
-        isNew: true,
+
         overview: 'An industrial-grade data engineering project that converts chaotic bike-sharing trip data into actionable operational intelligence, preventing station emptiness and improving fleet rebalancing.',
         problem: 'Managing a bike-sharing network like NYC CitiBike is a logistical nightmare. Demand fluctuates wildly based on weather and rush hours. Stations can go from "full" to "empty" in minutes, blocking users and causing revenue loss. Operational teams are often reactive, scrambling to move bikes only after service disruptions occur.',
         solution: `I engineered a high-throughput <strong>ELT Architecture</strong> designed for fault tolerance and scale:

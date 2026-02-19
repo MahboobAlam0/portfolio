@@ -24,74 +24,41 @@ const ProjectDetails = () => {
         );
     }
 
-    const MagneticButton = ({ children, to, className }) => {
-        const ref = React.useRef(null);
-        const [position, setPosition] = React.useState({ x: 0, y: 0 });
 
-        const handleMouse = (e) => {
-            const { clientX, clientY } = e;
-            const { height, width, left, top } = ref.current.getBoundingClientRect();
-            const middleX = clientX - (left + width / 2);
-            const middleY = clientY - (top + height / 2);
-            setPosition({ x: middleX * 0.2, y: middleY * 0.2 });
-        };
-
-        const reset = () => {
-            setPosition({ x: 0, y: 0 });
-        };
-
-        const { x, y } = position;
-        return (
-            <motion.div
-                style={{ position: "relative", display: "inline-block" }}
-                ref={ref}
-                onMouseMove={handleMouse}
-                onMouseLeave={reset}
-                animate={{ x, y }}
-                transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-            >
-                <Link to={to} className={className}>
-                    {children}
-                </Link>
-            </motion.div>
-        );
-    }
 
     return (
         <section className={`project-details ${isDarkMode ? 'dark-mode' : ''}`}>
-            {/* Hero Banner with Parallax Effect */}
+            {/* Hero with Background Image */}
             <div className="case-study-hero">
                 <div className="hero-overlay"></div>
                 <img src={project.image} alt={project.title} className="hero-bg-img" />
                 
-                <div className="fixed-nav-header">
-                    <MagneticButton to="/" className="back-btn-hero">
-                        <i className="fas fa-arrow-left"></i> Home
-                    </MagneticButton>
-                </div>
-
                 <div className="hero-content container">
+                    <Link to="/" className="back-link">
+                        <i className="fas fa-arrow-left"></i> Back to Projects
+                    </Link>
+
                     <motion.h1 
-                        initial={{ y: 30, opacity: 0 }}
+                        initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.7 }}
+                        transition={{ duration: 0.5 }}
                     >
                         {project.title}
                     </motion.h1>
                     <motion.p 
                         className="project-tagline"
-                        initial={{ y: 30, opacity: 0 }}
+                        initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.7, delay: 0.2 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
                     >
                         {project.description}
                     </motion.p>
                     
                     <motion.div 
                         className="tech-stack-hero"
-                        initial={{ y: 30, opacity: 0 }}
+                        initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.7, delay: 0.4 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
                     >
                         {project.techStack.map((tech, idx) => (
                             <span key={idx} className="tech-pill">{tech}</span>

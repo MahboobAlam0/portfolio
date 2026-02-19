@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { blogsData } from '../data/blogsData';
 import ScrollRevealWrapper from './ScrollRevealWrapper';
 import { useTheme } from '../context/ThemeContext';
@@ -48,11 +47,8 @@ const BlogList = () => {
                 <div className="blog-grid">
                     {filteredBlogs.length > 0 ? (
                         filteredBlogs.map((post, index) => (
-                            <ScrollRevealWrapper key={post.id} delay={index * 0.1}>
-                                <motion.div
-                                    className="blog-card glass"
-                                    whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                                >
+                            <ScrollRevealWrapper key={post.id} delay={index * 0.05}>
+                                <div className="blog-card">
                                     <div>
                                         <div className="blog-meta-top">
                                             <span className="blog-date">{post.date}</span>
@@ -73,7 +69,7 @@ const BlogList = () => {
                                     <Link to={`/blog/${post.id}`} className="read-more">
                                         Read Article <i className="fas fa-arrow-right"></i>
                                     </Link>
-                                </motion.div>
+                                </div>
                             </ScrollRevealWrapper>
                         ))
                     ) : (
