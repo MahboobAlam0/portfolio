@@ -10,8 +10,36 @@ import finSightCover from '../assets/images/ProjectImages/FinSight_Cover.png';
 
 
 import hmtEcgCover from '../assets/images/ProjectImages/HMT_ECG_Cover.png';
+import arduPilotCover from '../assets/images/ProjectImages/ArduPilot_Cover.png';
 
 export const projectsData = [
+    {
+        id: 'ardupilot-devops',
+        title: 'ArduPilot CI/CD: SITL Automation Pipeline',
+        description: 'A production-grade CI/CD pipeline for safety-critical drone software, automating SITL simulation and MAVLink validation via Docker.',
+        isNew: true,
+        overview: 'A robust <strong>DevOps Automation Pipeline</strong> for the ArduPilot ecosystem that replaces risky manual testing with automated <strong>Software-In-The-Loop (SITL)</strong> validation. It ensures every code change is flight-tested in a virtual environment before deployment.',
+        problem: 'Drone autopilot firmware is safety-critical; a single bug can cause physical crashes and hardware destruction ($500+ loss). Manual testing is inconsistent, time-consuming, and unscalable. Developers needed a way to validate mission-critical logic without risking actual hardware.',
+        solution: `I engineered a containerized <strong>CI/CD Pipeline</strong> using GitHub Actions and Docker to fully automate the testing lifecycle:
+        <br><br>
+        <strong>1. Ephemeral Test Environments (Docker):</strong>
+        Created a custom Docker image that pre-builds the ArduPilot firmware and SITL simulator. This guarantees a consistent, reproducible testing environment, eliminating "it works on my machine" issues and dependency conflicts.
+        <br><br>
+        <strong>2. Automated MAVLink Validation:</strong>
+        Developed a Python-based testing suite using <code>pymavlink</code> that connects to the simulated drone via TCP. It autonomously validates heartbeat signals, vehicle mode transitions, and system health status.
+        <br><br>
+        <strong>3. Fail-Fast Pipeline Architecture:</strong>
+        Implemented a strict quality gate in GitHub Actions. If the SITL simulation fails to stabilize or the heartbeat is missed within a defined timeout, the pipeline immediately blocks the merge, preventing broken code from reaching the main branch.`,
+        key_results: [
+            '<strong>Zero-Hardware Testing:</strong> Validates complex flight logic without risking physical drones.',
+            '<strong>Automated Assurance:</strong> Reduces regression testing time from hours of manual flight to minutes of automated simulation.',
+            '<strong>Production Readiness:</strong> Implements industry-standard DevOps practices for embedded systems.'
+        ],
+        impact: 'Demonstrates how modern DevOps principles can be applied to embedded systems, ensuring safety and reliability in critical autonomous vehicle software.',
+        image: arduPilotCover,
+        techStack: ['Docker', 'GitHub Actions', 'Python', 'ArduPilot SITL', 'MAVLink'],
+        github: 'https://github.com/MahboobAlam0/ardupilot_devops',
+    },
     {
         id: 'finsight-ai',
         title: 'FinSight: Financial Sentiment & Narrative Intelligence System',
@@ -43,7 +71,7 @@ export const projectsData = [
         id: 'hmt-ecg-net',
         title: 'HMT-ECGNet: Lightweight ECG AI',
         description: 'A lightweight, hierarchical deep learning architecture for high-performance ECG analysis on edge devices.',
-        isNew: true,
+        isNew: false,
         overview: 'A resource-efficient Deep Learning framework designed to bring clinical-grade arrhythmia detection to low-power wearable devices, addressing the constraints of latency and privacy.',
         problem: 'Traditional deep learning models for ECG analysis (like ResNet or Transformers) are often too computationally expensive for wearable devices. They typically require cloud connectivity for inference, which introduces significant latency, privacy risks, and dependency on stable internet connections—critical bottlenecks for real-time health monitoring.',
         solution: `I architected <strong>HMT-ECGNet</strong>, a hierarchical deep learning framework centered on extreme efficiency:
