@@ -157,6 +157,23 @@
   }
 }
 
+/* Placeholder for projects without a cover image */
+.project-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--card-bg) 100%);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.project-img-placeholder i {
+  font-size: 2.5rem;
+  color: var(--text-secondary);
+  opacity: 0.4;
+}
+
 /* New Badge */
 .new-badge {
   position: absolute;

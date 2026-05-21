@@ -14,14 +14,12 @@ const Experience = ({ isStandalone = true }) => {
             <motion.div variants={itemVariants}>
                 <ResumeCard
                     title="Research Intern"
-                    subTitle="Defence Institute of Advanced Technology (DIAT–DRDO), Pune"
-                    result="Jun 2025 – Present"
+                    subTitle="Defence Institute of Advanced Technology (DIAT-DU), Pune"
+                    result="May 2025 – April 2026"
                     des={
                         <ul className="experience-list">
-                            <li>Designed and trained a Physics-Informed Attention U-Net (PIAUNet) for underwater image segmentation.</li>
-                            <li>Improved model inference, achieving a +3.52% boost in Dice score and +3.90% mIoU over baseline U-Net.</li>
-                            <li>Developed robust, end-to-end PyTorch pipelines for data preprocessing, augmentation, training, and validation.</li>
-                            <li>Integrated domain physics constraints (e.g., light attenuation) to enhance model robustness in noisy environments.</li>
+                            <li>Designed <strong>PIAU-Net</strong> by embedding the Jaffe-McGlamery optical scattering model into an Attention U-Net — the first physics-informed architecture for underwater fish segmentation — trained on NVIDIA RTX 6000 Ada (48 GB) with mixed precision; achieved <strong>97.38% mIoU</strong> on LFish and <strong>93.98%</strong> on AquaOV255, outperforming DeepLabV3+ by +3.44 pp.</li>
+                            <li>Built <strong>LiteFishSeg</strong> (MobileNetV3+BiFPN+FCOS, 9.08M params) achieving <strong>80.3% mIoU</strong> at 2.7× fewer parameters than YOLOv10l-seg; and <strong>FishSegDet</strong> (ConvNeXt-V2-L+BiFPN+TAL) reaching <strong>70.0% mAP, 95.1% mAP₅₀, 99.1% PA</strong> — surpassing YOLOv11l-seg by +7.10 pp mAP₅₀.</li>
                         </ul>
                     }
                 />

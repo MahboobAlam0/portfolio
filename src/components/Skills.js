@@ -10,18 +10,25 @@ const Skills = ({ isStandalone = true }) => {
     const { ref, controls } = useScrollReveal();
 
     const skillsList = [
-        { name: "Python & SQL", percentage: "95%" },
-        { name: "Statistical Modeling & Predictive Analytics", percentage: "85%" },
-        { name: "Data Structures & Algorithms", percentage: "80%" },
-        { name: "Scikit-learn", percentage: "85%" },
-        { name: "Deep Learning Architectures (CNNs, Transformers)", percentage: "80%" },
-        { name: "PyTorch", percentage: "80%" },
-        { name: "Computer Vision (YOLO, OpenCV)", percentage: "75%" },
-        { name: "Cost-Sensitive Learning & Optimization", percentage: "80%" },
-        { name: "Image Segmentation", percentage: "75%" },
-        { name: "EDA & Visualization", percentage: "85%" },
-        { name: "Version Control (Git & GitHub)", percentage: "90%" },
-        { name: "Jupyter & Colab", percentage: "95%" },
+        // Languages
+        { name: "Python", percentage: "95%" },
+        { name: "SQL", percentage: "90%" },
+        // ML / DL
+        { name: "PyTorch", percentage: "88%" },
+        { name: "Scikit-learn & LightGBM", percentage: "88%" },
+        { name: "CNNs & Transformers", percentage: "85%" },
+        { name: "Semantic Segmentation", percentage: "85%" },
+        { name: "Physics-Informed Neural Networks", percentage: "82%" },
+        { name: "SHAP & Grad-CAM (Explainability)", percentage: "80%" },
+        // LLM & RAG
+        { name: "LLM Fine-tuning (QLoRA / PEFT)", percentage: "82%" },
+        { name: "RAG Systems (Qdrant / LangChain)", percentage: "82%" },
+        { name: "Sentence-Transformers & Embeddings", percentage: "80%" },
+        { name: "Hugging Face Ecosystem", percentage: "85%" },
+        // Tools
+        { name: "FastAPI & Docker", percentage: "88%" },
+        { name: "GitHub Actions (CI/CD)", percentage: "82%" },
+        { name: "OpenCV & Streamlit", percentage: "85%" },
     ];
 
     const skillsContent = (

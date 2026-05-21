@@ -26,6 +26,33 @@
     filter: brightness(0.5);
 }
 
+/* Hero fallback when no cover image is available */
+.case-study-hero.hero-no-image {
+    background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--primary-bg) 100%);
+}
+
+.case-study-hero.hero-no-image .hero-content h1,
+.case-study-hero.hero-no-image .hero-content .project-tagline,
+.case-study-hero.hero-no-image .back-link {
+    color: var(--text-primary);
+}
+
+.case-study-hero.hero-no-image .back-link {
+    color: var(--text-secondary);
+}
+
+.case-study-hero.hero-no-image .tech-pill {
+    background: var(--card-bg);
+    border-color: var(--card-border);
+    color: var(--text-primary);
+}
+
+.case-study-hero.hero-no-image .hero-btn.secondary {
+    background: var(--card-bg);
+    border-color: var(--card-border);
+    color: var(--text-primary);
+}
+
 .hero-overlay {
     position: absolute;
     top: 0;

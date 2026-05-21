@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -11,8 +11,9 @@ const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const { isDarkMode, toggleTheme } = useTheme();
     const location = useLocation();
+    const menuButtonRef = useRef(null);
+    const wasMenuOpen = useRef(false);
 
-    // Handle scroll effect
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
@@ -21,8 +22,15 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    useEffect(() => {
+        if (wasMenuOpen.current && !isMenuOpen) {
+            menuButtonRef.current?.focus();
+        }
+        wasMenuOpen.current = isMenuOpen;
+    }, [isMenuOpen]);
+
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+        setIsMenuOpen(prev => !prev);
     };
 
     const isHome = location.pathname === '/';
@@ -88,10 +96,13 @@ const Header = () => {
                         <i className={`fas ${isDarkMode ? 'fa-sun' : 'fa-moon'}`}></i>
                     </button>
 
-                    <button 
-                        className="menu-button" 
+                    <button
+                        ref={menuButtonRef}
+                        className="menu-button"
                         onClick={toggleMenu}
-                        aria-label="Menu"
+                        aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                        aria-expanded={isMenuOpen}
+                        aria-controls="mobile-menu"
                     >
                         <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
                     </button>
@@ -100,7 +111,8 @@ const Header = () => {
 
             <AnimatePresence>
                 {isMenuOpen && (
-                    <motion.div 
+                    <motion.div
+                        id="mobile-menu"
                         className="mobile-menu glass"
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}

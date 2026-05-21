@@ -29,9 +29,11 @@ const ProjectDetails = () => {
     return (
         <section className={`project-details ${isDarkMode ? 'dark-mode' : ''}`}>
             {/* Hero with Background Image */}
-            <div className="case-study-hero">
+            <div className={`case-study-hero${!project.image ? ' hero-no-image' : ''}`}>
                 <div className="hero-overlay"></div>
-                <img src={project.image} alt={project.title} className="hero-bg-img" />
+                {project.image && (
+                    <img src={project.image} alt={project.title} className="hero-bg-img" loading="lazy" />
+                )}
                 
                 <div className="hero-content container">
                     <Link to="/" className="back-link">

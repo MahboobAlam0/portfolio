@@ -30,7 +30,7 @@ const Publications = () => {
                 </div>
                 <div className="pub-content">
                     <h3>Physics-Informed Attention U-Net (PIAUNet): An Enhanced U-Net Framework for Underwater Segmentation in Aquaculture</h3>
-                    <p className="authors"><strong>Alam, M.</strong>, et al.</p>
+                    <p className="authors"><strong>Mahboob Alam</strong>, S. V. Dhavale, D. Srikanth</p>
                     <p className="venue">
                         <em>Indian Journal of Technical Education</em>, Vol.48 - No. 2 - December 2025.
                     </p>

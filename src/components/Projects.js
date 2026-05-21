@@ -24,7 +24,13 @@ const Projects = () => {
                             <div className="project-card">
                                 <div className="project-image">
                                     <Link to={`/project/${project.id}`} className="image-link" aria-label={`View details for ${project.title}`}>
-                                        <img src={project.image} alt={project.title} />
+                                        {project.image ? (
+                                            <img src={project.image} alt={project.title} loading="lazy" />
+                                        ) : (
+                                            <div className="project-img-placeholder">
+                                                <i className="fas fa-code-branch"></i>
+                                            </div>
+                                        )}
                                         <div className="image-overlay">
                                             <span className="details-link-btn">
                                                 View Details <i className="fas fa-arrow-right"></i>

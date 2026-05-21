@@ -14,20 +14,20 @@ const Education = ({ isStandalone = true }) => {
         <div className="resume-card-list">
             <ResumeCard
                 title="M.Tech in Data Science"
-                subTitle="Defence Institute of Advanced Technology (DIAT–DRDO), Pune"
-                result="2024–2026"
+                subTitle="Defence Institute of Advanced Technology (DIAT-DU), Pune"
+                result="2024 – 2026 (Completed)"
                 des={
                     <>
-                        <p style={{marginBottom: '0.5rem', fontWeight: '500'}}>CGPA: 8.10</p>
-                        <p>Focus on Machine Learning, Deep Learning, and Advanced Data Analytics.</p>
+                        <p style={{marginBottom: '0.5rem', fontWeight: '500'}}>CGPA: 8.10 / 10</p>
+                        <p>Specialization in Machine Learning, Deep Learning, and Computer Vision.</p>
                     </>
                 }
             />
             <ResumeCard
                 title="B.Tech in Computer Science and Engineering"
-                subTitle="RBSSIET, Indira Gandhi University, Rewari"
-                result="2019–2023"
-                des="Completed undergraduate studies with a focus on core computer science foundations."
+                subTitle="RBSSIET, Rewari — IGU Affiliated"
+                result="2019 – 2023"
+                des="Core computer science foundations including data structures, algorithms, and software engineering."
             />
         </div>
   );

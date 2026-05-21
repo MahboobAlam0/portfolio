@@ -24,10 +24,10 @@ const About = () => {
                         
                         <h1 className="name-title">Mahboob Alam</h1>
 
-                        <h3 className="gradient-subtitle">Data Scientist | Machine Learning Engineer</h3>
+                        <h3 className="gradient-subtitle">ML Engineer | Computer Vision | LLM & RAG</h3>
 
                         <p className="bio-text">
-                            I am a Data Scientist and Machine Learning Engineer passionate about building scalable, intelligent systems. My focus is on bridging the gap between research and production—developing deep learning models for edge devices, engineering robust data pipelines, and optimizing predictive algorithms for business impact. With a strong foundation in Computer Science and specialized research in AI (DIAT-DRDO), I enjoy solving complex, real-world problems through data-driven innovation.
+                            Fresh M.Tech graduate in Data Science from DIAT-DU, Pune (May 2026), with hands-on research internship experience in Computer Vision and Deep Learning. I've built physics-informed segmentation models (PIAU-Net, LiteFishSeg, FishSegDet) and production LLM/RAG systems from scratch — with a published paper and open-source deployments to show for it. Actively seeking full-time roles where I can apply my skills in edge AI, model optimization, and applied ML.
                         </p>
 
                         <div className="cta-container">
